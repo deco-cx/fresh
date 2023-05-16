@@ -32,7 +32,7 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
     let endNode: Node | null = null;
     if (tag) {
       const startNode = node!;
-      const children = [];
+      const children: Node[] = [];
       const parent = node!.parentNode;
       // collect all children of the island
       while ((node = node!.nextSibling) && node.nodeType !== 8) {
@@ -41,14 +41,22 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
       startNode.parentNode!.removeChild(startNode); // remove start tag node
 
       const [id, n] = tag.split(":");
-      render(
-        h(islands[id], props[Number(n)]),
-        createRootFragment(
-          parent! as HTMLElement,
-          children,
-          // deno-lint-ignore no-explicit-any
-        ) as any as HTMLElement,
-      );
+
+      const _render = () => {
+        render(
+          h(islands[id], props[Number(n)]),
+          createRootFragment(
+            parent! as HTMLElement,
+            children,
+            // deno-lint-ignore no-explicit-any
+          ) as any as HTMLElement,
+        );
+      };
+      // TODO: Run this under a flag
+      // Reference: https://developer.mozilla.org/en-US/docs/Web/API/Scheduler#examples
+      "scheduler" in window
+        ? await window.scheduler!.postTask(_render)
+        : setTimeout(_render, 0);
       endNode = node;
     }
 
