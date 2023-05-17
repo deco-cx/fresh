@@ -11,7 +11,7 @@ import {
 } from "./deps.ts";
 import { h } from "preact";
 import { Manifest } from "./mod.ts";
-import { Bundler, JSXConfig } from "./bundle.ts";
+import { createBundle, JSXConfig } from "./bundle.ts";
 import { ALIVE_URL, BUILD_ID, JS_PREFIX, REFRESH_JS_URL } from "./constants.ts";
 import DefaultErrorHandler from "./default_error_page.ts";
 import {
@@ -34,6 +34,8 @@ import {
 import { render as internalRender } from "./render.ts";
 import { ContentSecurityPolicyDirectives, SELF } from "../runtime/csp.ts";
 import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.ts";
+import { BlobStorage } from "./storage.ts";
+
 interface RouterState {
   state: Record<string, unknown>;
 }
@@ -56,13 +58,13 @@ export class ServerContext {
   #routes: Route[];
   #islands: Island[];
   #staticFiles: StaticFile[];
-  #bundler: Bundler;
   #renderFn: RenderFunction;
   #middlewares: MiddlewareRoute[];
   #app: AppModule;
   #notFound: UnknownPage;
   #error: ErrorPage;
   #plugins: Plugin[];
+  #bundle: Promise<BlobStorage>;
 
   constructor(
     routes: Route[],
@@ -87,13 +89,13 @@ export class ServerContext {
     this.#error = error;
     this.#plugins = plugins;
     this.#dev = typeof Deno.env.get("DENO_DEPLOYMENT_ID") !== "string"; // Env var is only set in prod (on Deploy).
-    this.#bundler = new Bundler(
-      this.#islands,
-      this.#plugins,
+    this.#bundle = createBundle({
+      islands: this.#islands,
+      plugins: this.#plugins,
       importMapURL,
       jsxConfig,
-      this.#dev,
-    );
+      dev: this.#dev,
+    });
   }
 
   /**
@@ -626,7 +628,8 @@ export class ServerContext {
   #bundleAssetRoute = (): rutt.MatchHandler => {
     return async (_req, _ctx, params) => {
       const path = `/${params.path}`;
-      const file = await this.#bundler.get(path);
+      const storage = await this.#bundle;
+      const file = await storage.get(path);
       let res;
       if (file) {
         const headers = new Headers({
