@@ -24,7 +24,13 @@ export const fsStorage = async (rootDir: string): Promise<BlobStorage> => {
 
   return {
     clear: () => emptyDir(rootDir),
-    get: (k: string) => Deno.readFile(join(rootDir, k)),
+    get: async (k: string) => {
+      console.time(`storage: ${k}`);
+      const blob = await Deno.readFile(join(rootDir, k));
+      console.timeEnd(`storage: ${k}`);
+
+      return blob;
+    },
     set: (k: string, v: Uint8Array) =>
       Deno.writeFile(join(rootDir, k), v, { create: true, append: false }),
   };
