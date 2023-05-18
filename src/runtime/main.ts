@@ -60,7 +60,7 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
       const [id, n] = tag.split(":");
 
       nextTick(() => {
-        const start = performance.now();
+        performance.mark(tag)
         render(
           h(islands[id], props[Number(n)]),
           createRootFragment(
@@ -69,7 +69,7 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
             // deno-lint-ignore no-explicit-any
           ) as any as HTMLElement,
         );
-        performance.measure(`hydration ${id}`, { start });
+        performance.measure(`hydrate: ${id}`, tag);
       });
 
       endNode = node;
@@ -85,9 +85,9 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
     if (fc) walk(fc);
   }
 
-  const start = performance.now();
+  performance.mark("revive-start");
   walk(document.body);
-  performance.measure("revive", { start });
+  performance.measure("revive", "revive-start");
 }
 
 const originalHook = options.vnode;
