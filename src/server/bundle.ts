@@ -73,7 +73,7 @@ const bundle = async (
     define: { __FRSH_BUILD_ID: `"${BUILD_ID}"` },
     entryPoints,
     format: "esm",
-    metafile: true,
+    metafile: !dev,
     ...minifyOptions,
     outdir: ".",
     // This is requried to ensure the format of the outputFiles path is the same
@@ -108,6 +108,13 @@ const storeBundle = async (
   absWorkingDir: string,
 ) => {
   await storage.clear();
+
+  if (bundle.metafile) {
+    await storage.set(
+      "metafile.json",
+      new TextEncoder().encode(JSON.stringify(bundle.metafile)),
+    );
+  }
 
   const absDirUrlLength = toFileUrl(absWorkingDir).href.length;
 
