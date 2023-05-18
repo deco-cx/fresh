@@ -10,7 +10,7 @@ export {
   ensureDir,
   walk,
 } from "https://deno.land/std@0.178.0/fs/mod.ts";
-export * as colors from "https://deno.land/std@0.178.0/fmt/colors.ts"
+export * as colors from "https://deno.land/std@0.178.0/fmt/colors.ts";
 export { serve } from "https://deno.land/std@0.178.0/http/server.ts";
 export type {
   ConnInfo,
