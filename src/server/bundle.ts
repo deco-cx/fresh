@@ -1,9 +1,13 @@
+import { BUILD_ID } from "./constants.ts";
 import {
   BuildOptions,
   BuildResult,
-} from "https://deno.land/x/esbuild@v0.17.11/mod.js";
-import { BUILD_ID } from "./constants.ts";
-import { denoPlugin, esbuild, join, toFileUrl } from "./deps.ts";
+  colors,
+  denoPlugin,
+  esbuild,
+  join,
+  toFileUrl,
+} from "./deps.ts";
 import { Island, Plugin } from "./types.ts";
 import { BlobStorage, fsStorage, inMemoryStorage } from "./storage.ts";
 
@@ -12,26 +16,16 @@ export interface JSXConfig {
   jsxImportSource?: string;
 }
 
-let esBuildInitPromise: Promise<void> | undefined = undefined;
-const ensureEsbuildInitialized = () => {
-  if (!esBuildInitPromise) {
-    const onDenoDeploy = Deno.run === undefined;
+const once = (cb: () => Promise<void>) => {
+  let p: Promise<void> | undefined = undefined;
 
-    esBuildInitPromise = onDenoDeploy
-      ? fetch(new URL("./esbuild_v0.17.11.wasm", import.meta.url))
-        .then((r) =>
-          WebAssembly.compileStreaming(
-            new Response(r.body, {
-              headers: { "Content-Type": "application/wasm" },
-            }),
-          )
-        )
-        .then((wasmModule) => esbuild.initialize({ wasmModule, worker: false }))
-      : esbuild.initialize({});
-  }
-
-  return esBuildInitPromise;
+  return (): Promise<void> => {
+    p ??= cb();
+    return p;
+  };
 };
+
+const esBuildInit = once(() => esbuild.initialize({}));
 
 const JSX_RUNTIME_MODE = {
   "react": "transform",
@@ -50,6 +44,7 @@ interface Options {
 const bundle = async (
   { importMapURL, dev, islands, plugins, jsxConfig, absWorkingDir }: Options,
 ) => {
+  const start = performance.now();
   const entryPoints: Record<string, string> = {
     main: dev
       ? new URL("../../src/runtime/main_dev.ts", import.meta.url).href
@@ -66,7 +61,8 @@ const bundle = async (
     }
   }
 
-  await ensureEsbuildInitialized();
+  await esBuildInit();
+
   // In dev-mode we skip identifier minification to be able to show proper
   // component names in Preact DevTools instead of single characters.
   const minifyOptions: Partial<BuildOptions> = dev
@@ -94,6 +90,14 @@ const bundle = async (
     jsx: JSX_RUNTIME_MODE[jsxConfig.jsx],
     jsxImportSource: jsxConfig.jsxImportSource,
   });
+
+  const duration = (performance.now() - start) / 1e3;
+
+  console.log(
+    `📦 ${dev ? "Development" : "Production"} bundle ready in ${
+      colors.cyan(`${duration.toFixed(1)}s`)
+    }`,
+  );
 
   return bundle;
 };
