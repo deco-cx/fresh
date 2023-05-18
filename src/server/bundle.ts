@@ -122,9 +122,9 @@ export const createBundle = async (
 ): Promise<BlobStorage> => {
   const absWorkingDir = Deno.cwd();
   const storagePath = join(absWorkingDir, "/.frsh");
+  const fs = await fsStorage(storagePath);
 
   if (options.dev) {
-    const fs = await fsStorage(storagePath);
     const inMemory = inMemoryStorage();
 
     const [prod, dev] = await Promise.all([
@@ -138,8 +138,8 @@ export const createBundle = async (
     ]);
 
     return inMemory;
-  } else {
-    return fsStorage(storagePath);
   }
+
+  return fs;
 };
   

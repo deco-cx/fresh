@@ -3,7 +3,9 @@ import { emptyDir, ensureDir, join } from "./deps.ts";
 
 export interface BlobStorage {
   set: (key: string, value: Uint8Array) => Promise<void>;
-  get: (key: string) => Promise<Uint8Array | undefined>;
+  get: (
+    key: string,
+  ) => Promise<Uint8Array | ReadableStream<Uint8Array> | undefined>;
   clear: () => Promise<void>;
 }
 
@@ -26,10 +28,10 @@ export const fsStorage = async (rootDir: string): Promise<BlobStorage> => {
     clear: () => emptyDir(rootDir),
     get: async (k: string) => {
       console.time(`storage: ${k}`);
-      const blob = await Deno.readFile(join(rootDir, k));
+      const file = await Deno.open(join(rootDir, k), { read: true });
       console.timeEnd(`storage: ${k}`);
 
-      return blob;
+      return file.readable;
     },
     set: (k: string, v: Uint8Array) =>
       Deno.writeFile(join(rootDir, k), v, { create: true, append: false }),
