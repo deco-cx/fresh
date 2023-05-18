@@ -1,6 +1,14 @@
 import { ComponentType, h, options, render } from "preact";
 import { assetHashingHook } from "./utils.ts";
 
+declare global {
+  interface Window {
+    scheduler?: {
+      postTask: (cb: () => void) => void;
+    };
+  }
+}
+
 function createRootFragment(
   parent: Element,
   replaceNode: Node | Node[],
@@ -24,6 +32,15 @@ function createRootFragment(
   };
 }
 
+// Reference: https://developer.mozilla.org/en-US/docs/Web/API/Scheduler#examples
+const nextTick = (cb: () => void) => {
+  if ("scheduler" in window) {
+    window.scheduler!.postTask(cb);
+  } else {
+    setTimeout(cb, 0); // Support older browsers
+  }
+};
+
 // deno-lint-ignore no-explicit-any
 export function revive(islands: Record<string, ComponentType>, props: any[]) {
   function walk(node: Node | null) {
@@ -42,7 +59,8 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
 
       const [id, n] = tag.split(":");
 
-      const _render = () => {
+      nextTick(() => {
+        const start = performance.now();
         render(
           h(islands[id], props[Number(n)]),
           createRootFragment(
@@ -51,12 +69,9 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
             // deno-lint-ignore no-explicit-any
           ) as any as HTMLElement,
         );
-      };
-      // TODO: Run this under a flag
-      // Reference: https://developer.mozilla.org/en-US/docs/Web/API/Scheduler#examples
-      "scheduler" in window
-        ? await window.scheduler!.postTask(_render)
-        : setTimeout(_render, 0);
+        performance.measure(`hydration ${id}`, { start });
+      });
+
       endNode = node;
     }
 
@@ -69,7 +84,10 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
     if (sib) walk(sib);
     if (fc) walk(fc);
   }
+
+  const start = performance.now();
   walk(document.body);
+  performance.measure("revive", { start });
 }
 
 const originalHook = options.vnode;
