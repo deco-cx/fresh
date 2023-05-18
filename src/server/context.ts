@@ -657,10 +657,11 @@ export class ServerContext {
       const path = `/${params.path}`;
       const storage = await this.#bundle;
       const file = await storage.get(path);
-      let res;
+
       if (file) {
         const headers = new Headers({
           "Cache-Control": "public, max-age=604800, immutable",
+          "Content-Length": `${file.size}`,
         });
 
         const contentType = typeByExtension(extname(path));
@@ -668,15 +669,10 @@ export class ServerContext {
           headers.set("Content-Type", contentType);
         }
 
-        res = new Response(file, {
-          status: 200,
-          headers,
-        });
+        return new Response(file.content, { status: 200, headers });
       }
 
-      return res ?? new Response(null, {
-        status: 404,
-      });
+      return new Response(null, { status: 404 });
     };
   };
 }
