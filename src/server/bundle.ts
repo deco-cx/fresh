@@ -132,7 +132,7 @@ export const createBundle = async (
   options: Omit<Options, "absWorkingDir">,
 ): Promise<BlobStorage> => {
   const absWorkingDir = Deno.cwd();
-  const storagePath = join(absWorkingDir, "/.frsh");
+  const storagePath = join(absWorkingDir, "/.frsh/js");
   const fs = await fsStorage(storagePath);
 
   if (options.dev) {
