@@ -2,6 +2,7 @@ import { BuildOptions } from "https://deno.land/x/esbuild@v0.17.11/mod.js";
 import { BUILD_ID } from "./constants.ts";
 import { denoPlugin, esbuild, toFileUrl } from "./deps.ts";
 import { Island, Plugin } from "./types.ts";
+import { CacheStorage, createAssetsStorage } from "./storage.ts";
 
 export interface JSXConfig {
   jsx: "react" | "react-jsx";
@@ -44,7 +45,7 @@ export class Bundler {
   #jsxConfig: JSXConfig;
   #islands: Island[];
   #plugins: Plugin[];
-  #cache: Map<string, Uint8Array> | Promise<void> | undefined = undefined;
+  #cache: CacheStorage | Promise<void> | undefined = undefined;
   #dev: boolean;
 
   constructor(
@@ -117,7 +118,8 @@ export class Bundler {
     //   this.#preloads.set(`/${path}`, imports);
     // }
 
-    const cache = new Map<string, Uint8Array>();
+    const cache = await createAssetsStorage();
+
     const absDirUrlLength = toFileUrl(absWorkingDir).href.length;
     for (const file of bundle.outputFiles) {
       cache.set(
@@ -134,17 +136,17 @@ export class Bundler {
     return;
   }
 
-  async cache(): Promise<Map<string, Uint8Array>> {
+  async cache() {
     if (this.#cache === undefined) {
       this.#cache = this.bundle();
     }
     if (this.#cache instanceof Promise) {
       await this.#cache;
     }
-    return this.#cache as Map<string, Uint8Array>;
+    return this.#cache as CacheStorage;
   }
 
-  async get(path: string): Promise<Uint8Array | null> {
+  async get(path: string) {
     const cache = await this.cache();
     return cache.get(path) ?? null;
   }
