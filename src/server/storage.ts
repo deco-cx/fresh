@@ -7,25 +7,17 @@ export interface CacheStorage {
   set: (key: string, payload: Uint8Array) => Promise<void>;
 }
 
-export const createAssetsStorage = () => {
-  // if (typeof caches !== "undefined") {
-  //   console.log("using WebCache API for assets storage");
-  //   return webCacheAPIStorage();
-  // }
-
-  console.log(Deno.openKv, Deno)
-
-  // if (typeof Deno.openKv !== "undefined") {
-    console.log("using Deno.KV for assets storage");
-    return kvStorage();
-  // }
-
-  console.log("using InMemory for assets torage");
-  return inMemoryStorage();
-};
+export const createAssetsStorage = () =>
+  typeof caches !== "undefined"
+    ? webCacheAPIStorage()
+    : typeof Deno.openKv !== "undefined"
+    ? kvStorage()
+    : inMemoryStorage();
 
 const webCacheAPIStorage = async (): Promise<CacheStorage> => {
-  const cache = await caches.open(`${BUILD_ID}::assets`);
+  console.log("Creating WebCache API storage");
+
+  const cache = await caches.open(`_frsh/js/${BUILD_ID}`);
 
   const requestForKey = (key: string) =>
     new Request(new URL(key, "http://fresh.deno.cache"));
@@ -44,30 +36,34 @@ const webCacheAPIStorage = async (): Promise<CacheStorage> => {
 // ["_frsh", "js", "headers", BUILD_ID, chunkName]        | { key: value, ... } // headers data
 // ["_frsh", "js", "buildOutput", BUILD_ID, chunkName, i] | ArrayBuffer {} // split content
 const kvStorage = async (): Promise<CacheStorage> => {
+  console.log("Creating KV storage");
+
   const MAX_CHUNK_SIZE = 65536;
+  const NAMESPACE = ["_frsh", "js"];
   const cache = await Deno.openKv();
 
-  const payloadKey = (key: string) => ["_frsh", "js", BUILD_ID, key];
+  const payloadKey = (key: string) => [...NAMESPACE, BUILD_ID, key];
   const chunkKey = (
     key: string,
     index: number,
   ) => [...payloadKey(key), `${index}`];
 
   return {
-    get: async (key) => {
-      const list = await cache.list({ prefix: payloadKey(key) }, {
+    get: (key) => {
+      const list = cache.list({ prefix: payloadKey(key) }, {
         consistency: "eventual",
       });
 
-      return new ReadableStream<Uint8Array>({
-        start: async (controller) => {
-          for await (const chunk of list) {
-            controller.enqueue(chunk.value as Uint8Array);
-          }
-
-          controller.close();
-        },
-      });
+      return Promise.resolve(
+        new ReadableStream<Uint8Array>({
+          start: async (controller) => {
+            for await (const chunk of list) {
+              controller.enqueue(chunk.value as Uint8Array);
+            }
+            controller.close();
+          },
+        }),
+      );
     },
     set: async (key, payload) => {
       const chunks: Uint8Array[] = [];
@@ -82,18 +78,23 @@ const kvStorage = async (): Promise<CacheStorage> => {
         chunks.push(chunk);
       }
 
-      for (let i = 0; i < chunks.length; i++) {
-        await cache.set(chunkKey(key, i), chunks[i]);
-      }
+      const transaction = chunks.reduce(
+        (operation, chunk, i) => operation.set(chunkKey(key, i), chunk),
+        cache.atomic(),
+      );
+
+      await transaction.commit();
     },
   };
 };
 
-const inMemoryStorage = (): CacheStorage => {
+const inMemoryStorage = (): Promise<CacheStorage> => {
+  console.log("Creating InMemory storage");
+
   const cache = new Map<string, Uint8Array>();
 
-  return {
+  return Promise.resolve({
     get: (key) => Promise.resolve(cache.get(key) ?? null),
     set: (key, payload) => new Promise(() => cache.set(key, payload)),
-  };
+  });
 };

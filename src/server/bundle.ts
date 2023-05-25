@@ -2,7 +2,7 @@ import { BuildOptions } from "https://deno.land/x/esbuild@v0.17.11/mod.js";
 import { BUILD_ID } from "./constants.ts";
 import { denoPlugin, esbuild, toFileUrl } from "./deps.ts";
 import { Island, Plugin } from "./types.ts";
-import { CacheStorage, createAssetsStorage } from "./storage.ts";
+import { createAssetsStorage } from "./storage.ts";
 
 export interface JSXConfig {
   jsx: "react" | "react-jsx";
@@ -40,13 +40,15 @@ const JSX_RUNTIME_MODE = {
   "react-jsx": "automatic",
 } as const;
 
+const cachePromise = createAssetsStorage();
+
 export class Bundler {
   #importMapURL: URL;
   #jsxConfig: JSXConfig;
   #islands: Island[];
   #plugins: Plugin[];
-  #cache: CacheStorage | Promise<void> | undefined = undefined;
   #dev: boolean;
+  #bundled = false;
 
   constructor(
     islands: Island[],
@@ -63,6 +65,8 @@ export class Bundler {
   }
 
   async bundle() {
+    this.#bundled = true;
+
     const entryPoints: Record<string, string> = {
       main: this.#dev
         ? new URL("../../src/runtime/main_dev.ts", import.meta.url).href
@@ -118,37 +122,32 @@ export class Bundler {
     //   this.#preloads.set(`/${path}`, imports);
     // }
 
-    const cache = await createAssetsStorage();
-
+    const cache = await cachePromise;
     const absDirUrlLength = toFileUrl(absWorkingDir).href.length;
     for (const file of bundle.outputFiles) {
-      cache.set(
+      await cache.set(
         toFileUrl(file.path).href.substring(absDirUrlLength),
         file.contents,
       );
     }
-    cache.set(
+    await cache.set(
       "/metafile.json",
       new TextEncoder().encode(JSON.stringify(bundle.metafile)),
     );
-    this.#cache = cache;
 
     return;
   }
 
-  async cache() {
-    if (this.#cache === undefined) {
-      this.#cache = this.bundle();
-    }
-    if (this.#cache instanceof Promise) {
-      await this.#cache;
-    }
-    return this.#cache as CacheStorage;
-  }
-
   async get(path: string) {
-    const cache = await this.cache();
-    return cache.get(path) ?? null;
+    const cache = await cachePromise;
+    const response = await cache.get(path);
+
+    if (!response && !this.#bundled) {
+      await this.bundle();
+      return cache.get(path);
+    }
+
+    return response
   }
 
   // getPreloads(path: string): string[] {
