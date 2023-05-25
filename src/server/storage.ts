@@ -8,10 +8,12 @@ export interface CacheStorage {
 }
 
 export const createAssetsStorage = () => {
-  if (typeof caches !== "undefined") {
-    console.log("using WebCache API for assets storage");
-    return webCacheAPIStorage();
-  }
+  // if (typeof caches !== "undefined") {
+  //   console.log("using WebCache API for assets storage");
+  //   return webCacheAPIStorage();
+  // }
+
+  console.log(Deno.openKv, Deno)
 
   if (typeof Deno.openKv !== "undefined") {
     console.log("using Deno.KV for assets storage");
@@ -57,13 +59,15 @@ const kvStorage = async (): Promise<CacheStorage> => {
         consistency: "eventual",
       });
 
-      const chunks: Uint8Array[] = [];
-      for await (const chunk of list) chunks.push(chunk.value as Uint8Array);
+      return new ReadableStream<Uint8Array>({
+        start: async (controller) => {
+          for await (const chunk of list) {
+            controller.enqueue(chunk.value as Uint8Array);
+          }
 
-      return chunks.reduce(
-        (array, chunk) => new Uint8Array([...array, ...chunk]),
-        new Uint8Array(),
-      );
+          controller.close();
+        },
+      });
     },
     set: async (key, payload) => {
       const chunks: Uint8Array[] = [];
