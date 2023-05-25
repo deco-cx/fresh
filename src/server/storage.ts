@@ -15,10 +15,10 @@ export const createAssetsStorage = () => {
 
   console.log(Deno.openKv, Deno)
 
-  if (typeof Deno.openKv !== "undefined") {
+  // if (typeof Deno.openKv !== "undefined") {
     console.log("using Deno.KV for assets storage");
     return kvStorage();
-  }
+  // }
 
   console.log("using InMemory for assets torage");
   return inMemoryStorage();
