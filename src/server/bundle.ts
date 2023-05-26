@@ -202,6 +202,7 @@ const createKv = () => {
   const chunksize = 65536;
   const namespace = ["_frsh", "js", BUILD_ID];
 
+  // @ts-ignore as `Deno.openKv` is still unstable.
   const kvPromise = Deno.openKv?.();
 
   if (!kvPromise) return null;
