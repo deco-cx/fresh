@@ -231,6 +231,7 @@ const createKv = () => {
       const filepath = [...namespace, file];
       const metadata = await kv.get(filepath);
 
+// Current limitation: As of May 2023, KV Transactions only support a maximum of 10 operations.
       let transaction = kv.atomic();
       let chunks = 0;
       for (; chunks * chunksize < content.length; chunks++) {
