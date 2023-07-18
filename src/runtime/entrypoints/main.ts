@@ -34,7 +34,7 @@ function createRootFragment(
 
 // deno-lint-ignore no-explicit-any
 export function revive(islands: Record<string, ComponentType>, props: any[]) {
-  async function walk(node: Node | null) {
+  function walk(node: Node | null) {
     const tag = node!.nodeType === 8 &&
       ((node as Comment).data.match(/^\s*frsh-(.*)\s*$/) || [])[1];
     let endNode: Node | null = null;
@@ -63,7 +63,7 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
       };
 
       "scheduler" in window
-        ? await window.scheduler!.postTask(_render)
+        ? window.scheduler!.postTask(_render)
         : setTimeout(_render, 0);
       endNode = node;
     }
