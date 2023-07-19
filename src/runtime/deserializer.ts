@@ -57,7 +57,7 @@ export function deserialize(
         v,
       );
 
-      parent[refPath.slice(-1)[0]!] = target;
+      parent[refPath[refPath.length - 1]!] = target;
     }
   }
   return v;
