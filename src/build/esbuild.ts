@@ -43,7 +43,7 @@ export class EsbuildBuilder implements Builder {
   }
 
   async read(path: string) {
-    const content = this.#files.get(path) || await getFile(path);
+    const content = this.#files.get(path) // || await getFile(path);
 
     if (content) return content;
 
