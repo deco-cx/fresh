@@ -103,7 +103,7 @@ export class EsbuildBuilder implements Builder {
         entryPoints: opts.entrypoints,
 
         platform: "browser",
-        target: ["chrome99", "firefox99", "safari11", "safari15"],
+        target: ["chrome99", "firefox99", "safari12"],
 
         format: "esm",
         bundle: true,
