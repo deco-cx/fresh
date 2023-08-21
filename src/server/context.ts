@@ -145,7 +145,7 @@ export class ServerContext {
     const baseUrl = new URL("./", manifest.baseUrl).href;
 
     const { config, path: configPath } = await readDenoConfig(
-      fromFileUrl(baseUrl),
+      baseUrl.startsWith("http") ? baseUrl : fromFileUrl(baseUrl),
     );
     if (typeof config.importMap !== "string" && !isObject(config.imports)) {
       throw new Error(
