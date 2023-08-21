@@ -354,11 +354,14 @@ export class ServerContext {
         opts.staticDir ?? "./static",
         manifest.baseUrl,
       );
-      const entries = walk(fromFileUrl(staticFolder), {
-        includeFiles: true,
-        includeDirs: false,
-        followSymlinks: false,
-      });
+      const entries = staticFolder.protocol !== "file:" ? [] : walk(
+        fromFileUrl(staticFolder),
+        {
+          includeFiles: true,
+          includeDirs: false,
+          followSymlinks: false,
+        },
+      );
       const encoder = new TextEncoder();
       for await (const entry of entries) {
         const localUrl = toFileUrl(entry.path);
