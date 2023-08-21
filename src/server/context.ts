@@ -1,5 +1,4 @@
 import {
-  colors,
   dirname,
   extname,
   fromFileUrl,
@@ -48,13 +47,7 @@ import {
   SELF,
 } from "../runtime/csp.ts";
 import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.ts";
-import {
-  Builder,
-  BuildSnapshot,
-  EsbuildBuilder,
-  EsbuildSnapshot,
-  JSXConfig,
-} from "../build/mod.ts";
+import { Builder, EsbuildBuilder, JSXConfig } from "../build/mod.ts";
 import { InternalRoute } from "./router.ts";
 import { setAllIslands } from "./rendering/preact_hooks.ts";
 
@@ -101,7 +94,7 @@ export class ServerContext {
   #notFound: UnknownPage;
   #error: ErrorPage;
   #plugins: Plugin[];
-  #builder: Builder | Promise<BuildSnapshot> | BuildSnapshot;
+  #builder: Builder;
   #routerOptions: RouterOptions;
 
   constructor(
@@ -119,7 +112,6 @@ export class ServerContext {
     jsxConfig: JSXConfig,
     dev: boolean = isDevMode(),
     routerOptions: RouterOptions,
-    snapshot: BuildSnapshot | null = null,
   ) {
     this.#routes = routes;
     this.#islands = islands;
@@ -132,7 +124,7 @@ export class ServerContext {
     this.#error = error;
     this.#plugins = plugins;
     this.#dev = dev;
-    this.#builder = snapshot ?? new EsbuildBuilder({
+    this.#builder = new EsbuildBuilder({
       buildID: BUILD_ID,
       entrypoints: collectEntrypoints(this.#dev, this.#islands, this.#plugins),
       configPath,
@@ -162,38 +154,6 @@ export class ServerContext {
     }
 
     // Restore snapshot if available
-    let snapshot: BuildSnapshot | null = null;
-    // Load from snapshot if not explicitly requested not to
-    const loadFromSnapshot = !opts.skipSnapshot;
-    if (loadFromSnapshot) {
-      const snapshotDirPath = join(dirname(configPath), "_fresh");
-      try {
-        if ((await Deno.stat(snapshotDirPath)).isDirectory) {
-          console.log(
-            `Using snapshot found at ${colors.cyan(snapshotDirPath)}`,
-          );
-
-          const snapshotPath = join(snapshotDirPath, "snapshot.json");
-          const json = JSON.parse(await Deno.readTextFile(snapshotPath));
-          const dependencies = new Map<string, string[]>(
-            Object.entries(json),
-          );
-
-          const files = new Map();
-          const names = Object.keys(json);
-          await Promise.all(names.map(async (name) => {
-            const filePath = join(snapshotDirPath, name);
-            files.set(name, await Deno.readFile(filePath));
-          }));
-
-          snapshot = new EsbuildSnapshot(files, dependencies);
-        }
-      } catch (err) {
-        if (!(err instanceof Deno.errors.NotFound)) {
-          throw err;
-        }
-      }
-    }
 
     config.compilerOptions ??= {};
 
@@ -452,7 +412,6 @@ export class ServerContext {
       jsxConfig,
       dev,
       opts.router ?? DEFAULT_ROUTER_OPTIONS,
-      snapshot,
     );
   }
 
@@ -503,28 +462,6 @@ export class ServerContext {
 
       return await withMiddlewares(req, connInfo, inner);
     };
-  }
-
-  #maybeBuildSnapshot(): BuildSnapshot | null {
-    if ("build" in this.#builder || this.#builder instanceof Promise) {
-      return null;
-    }
-    return this.#builder;
-  }
-
-  async buildSnapshot() {
-    if ("build" in this.#builder) {
-      const builder = this.#builder;
-      this.#builder = builder.build();
-      try {
-        const snapshot = await this.#builder;
-        this.#builder = snapshot;
-      } catch (err) {
-        this.#builder = builder;
-        throw err;
-      }
-    }
-    return this.#builder;
   }
 
   /**
@@ -712,11 +649,6 @@ export class ServerContext {
     // Tell renderer about all globally available islands
     setAllIslands(this.#islands);
 
-    const dependenciesFn = (path: string) => {
-      const snapshot = this.#maybeBuildSnapshot();
-      return snapshot?.dependencies(path) ?? [];
-    };
-
     const renderNotFound = async <Data = undefined>(
       req: Request,
       params: Record<string, string>,
@@ -746,7 +678,7 @@ export class ServerContext {
         app: this.#app,
         layouts,
         imports,
-        dependenciesFn,
+        dependenciesFn: (path) => this.#builder.dependencies(path),
         renderFn: this.#renderFn,
         url: new URL(req.url),
         params,
@@ -800,7 +732,7 @@ export class ServerContext {
             app: this.#app,
             layouts,
             imports,
-            dependenciesFn,
+            dependenciesFn: (path) => this.#builder.dependencies(path),
             renderFn: this.#renderFn,
             url: new URL(req.url),
             params,
@@ -988,8 +920,7 @@ export class ServerContext {
    */
   #bundleAssetRoute = (): router.MatchHandler => {
     return async (_req, _ctx, params) => {
-      const snapshot = await this.buildSnapshot();
-      const contents = snapshot.read(params.path);
+      const contents = await this.#builder.read(params.path);
       if (!contents) return new Response(null, { status: 404 });
 
       const headers: Record<string, string> = {
