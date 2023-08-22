@@ -145,7 +145,7 @@ export class ServerContext {
     const baseUrl = new URL("./", manifest.baseUrl).href;
 
     const { config, path: configPath } = await readDenoConfig(
-      baseUrl.startsWith("http") ? baseUrl : fromFileUrl(baseUrl),
+      "./",
     );
     if (typeof config.importMap !== "string" && !isObject(config.imports)) {
       throw new Error(
@@ -174,6 +174,7 @@ export class ServerContext {
       jsx,
       jsxImportSource: config.compilerOptions.jsxImportSource,
     };
+    console.log({ jsxConfig });
 
     // Extract all routes, and prepare them into the `Page` structure.
     const routes: Route[] = [];
