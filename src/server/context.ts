@@ -145,7 +145,7 @@ export class ServerContext {
     const baseUrl = new URL("./", manifest.baseUrl).href;
 
     const { config, path: configPath } = await readDenoConfig(
-      "/src/deno.json",
+      "/src",
     );
     if (typeof config.importMap !== "string" && !isObject(config.imports)) {
       throw new Error(
