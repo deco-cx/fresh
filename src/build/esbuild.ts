@@ -22,6 +22,7 @@ export interface EsbuildBuilderOptions {
   configPath: string;
   /** The JSX configuration. */
   jsxConfig: JSXConfig;
+  partialOpts?: Partial<Parameters<(typeof esbuild)["build"]>[0]>;
 }
 
 export interface JSXConfig {
@@ -120,7 +121,9 @@ export class EsbuildBuilder implements Builder {
         write: false,
         metafile: true,
 
+        ...opts?.partialOpts,
         plugins: [
+          ...opts?.partialOpts?.plugins ?? [],
           buildIdPlugin(opts.buildID),
           ...denoPlugins({ configPath: opts.configPath }),
         ],
@@ -134,12 +137,14 @@ export class EsbuildBuilder implements Builder {
 
       const absWorkingDirLen = toFileUrl(absWorkingDir).href.length + 1;
 
-      for (const file of bundle.outputFiles) {
+      for (const file of (bundle?.outputFiles ?? [])) {
         const path = toFileUrl(file.path).href.slice(absWorkingDirLen);
         this.#files.set(path, file.contents);
       }
 
-      const metaOutputs = new Map(Object.entries(bundle.metafile.outputs));
+      const metaOutputs = new Map(
+        Object.entries(bundle?.metafile?.outputs ?? {}),
+      );
 
       for (const [path, entry] of metaOutputs.entries()) {
         const imports = entry.imports

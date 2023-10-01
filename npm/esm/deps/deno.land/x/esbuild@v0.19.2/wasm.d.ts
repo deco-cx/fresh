@@ -1,0 +1,12 @@
+export function analyzeMetafile(metafile: any, options: any): any;
+export function analyzeMetafileSync(): never;
+export function build(options: any): any;
+export function buildSync(): never;
+export function context(options: any): any;
+export function formatMessages(messages: any, options: any): any;
+export function formatMessagesSync(): never;
+export function initialize(options: any): Promise<void>;
+export function stop(): void;
+export function transform(input: any, options: any): any;
+export function transformSync(): never;
+export var version: string;
