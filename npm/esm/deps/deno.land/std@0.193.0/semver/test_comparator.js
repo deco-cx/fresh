@@ -1,4 +1,4 @@
-import { cmp } from "./cmp.js";
+import { cmp } from "./cmp.ts";
 /**
  * Test to see if a semantic version falls within the range of the comparator.
  * @param version The version to compare

@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVerRange } from "./types.js";
-import { comparatorFormat } from "./comparator_format.js";
+import type { SemVerRange } from "./types.ts";
+import { comparatorFormat } from "./comparator_format.ts";
 
 /**
  * Formats the range into a string

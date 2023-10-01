@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer, SemVerRange } from "./types.js";
-import { sort } from "./sort.js";
-import { testRange } from "./test_range.js";
-import { parseRange } from "./parse_range.js";
-import { parse } from "./parse.js";
+import type { SemVer, SemVerRange } from "./types.ts";
+import { sort } from "./sort.ts";
+import { testRange } from "./test_range.ts";
+import { parseRange } from "./parse_range.ts";
+import { parse } from "./parse.ts";
 
 /**
  * Returns the highest version in the list that satisfies the range, or `undefined`

@@ -1,7 +1,7 @@
 /// <reference types="node" />
-import { esbuild } from "../deps.js";
-import * as deno from "./deno.js";
-import { Loader, LoaderResolution } from "./shared.js";
+import { esbuild } from "../deps.ts";
+import * as deno from "./deno.ts";
+import { Loader, LoaderResolution } from "./shared.ts";
 export interface NativeLoaderOptions {
     infoOptions?: deno.InfoOptions;
 }

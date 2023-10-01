@@ -1,4 +1,4 @@
-import type { SemVer, SemVerRange } from "./types.js";
+import type { SemVer, SemVerRange } from "./types.ts";
 /** Greater than range comparison */
 export declare function ltr(version: SemVer, range: SemVerRange): boolean;
 /**

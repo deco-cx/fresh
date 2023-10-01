@@ -1,13 +1,13 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 // @ts-nocheck Bypass static errors for missing --unstable.
 
-import * as path from "../path/mod.js";
-import { ensureDir, ensureDirSync } from "./ensure_dir.js";
-import { getFileInfoType, isSubdir, toPathString } from "./_util.js";
-import { assert } from "../assert/assert.js";
-import { isWindows } from "../_util/os.js";
+import * as path from "../path/mod.ts";
+import { ensureDir, ensureDirSync } from "./ensure_dir.ts";
+import { getFileInfoType, isSubdir, toPathString } from "./_util.ts";
+import { assert } from "../assert/assert.ts";
+import { isWindows } from "../_util/os.ts";
 
 export interface CopyOptions {
   /**

@@ -1,4 +1,4 @@
-import { isImportMap, isImports, isScopes, isSpecifierMap, isURL, sortObject, } from "./_util.js";
+import { isImportMap, isImports, isScopes, isSpecifierMap, isURL, sortObject, } from "./_util.ts";
 /* https://wicg.github.io/import-maps/#sort-and-normalize-a-specifier-map */
 function sortAndNormalizeSpecifierMap(originalMap, baseURL) {
     const normalized = {};

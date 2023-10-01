@@ -1,5 +1,5 @@
-import { parse } from "./parse.js";
-import { format } from "./format.js";
+import { parse } from "./parse.ts";
+import { format } from "./format.ts";
 function pre(prerelease, identifier) {
     let values = [...prerelease];
     // In reality this will either be 0, 1 or 2 entries.

@@ -1,4 +1,4 @@
-import { isSemVerComparator } from "./is_semver_comparator.js";
+import { isSemVerComparator } from "./is_semver_comparator.ts";
 /**
  * Does a deep check on the object to determine if its a valid range.
  *

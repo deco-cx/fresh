@@ -1,9 +1,9 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { globToRegExp, isAbsolute, isGlob, joinGlobs, resolve, SEP_PATTERN, } from "../path/mod.js";
-import { _createWalkEntry, _createWalkEntrySync, walk, walkSync, } from "./walk.js";
-import { assert } from "../_util/assert.js";
-import { isWindows } from "../_util/os.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { globToRegExp, isAbsolute, isGlob, joinGlobs, resolve, SEP_PATTERN, } from "../path/mod.ts";
+import { _createWalkEntry, _createWalkEntrySync, walk, walkSync, } from "./walk.ts";
+import { assert } from "../_util/assert.ts";
+import { isWindows } from "../_util/os.ts";
 function split(path) {
     const s = SEP_PATTERN.source;
     const segments = path

@@ -1,8 +1,8 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { Buffer } from "../io/buffer.js";
+import { Buffer } from "../io/buffer.ts";
 
 const DEFAULT_CHUNK_SIZE = 16_640;
 const DEFAULT_BUFFER_SIZE = 32 * 1024;

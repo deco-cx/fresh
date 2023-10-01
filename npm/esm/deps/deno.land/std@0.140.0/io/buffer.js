@@ -11,10 +11,10 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _Buffer_instances, _Buffer_buf, _Buffer_off, _Buffer_tryGrowByReslice, _Buffer_reslice, _Buffer_grow, _BufReader_buf, _BufReader_rd, _BufReader_r, _BufReader_w, _BufReader_eof, _BufReader_fill, _BufReader_reset, _BufWriter_writer, _BufWriterSync_writer;
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { assert } from "../_util/assert.js";
-import { BytesList } from "../bytes/bytes_list.js";
-import { concat, copy } from "../bytes/mod.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { assert } from "../_util/assert.ts";
+import { BytesList } from "../bytes/bytes_list.ts";
+import { concat, copy } from "../bytes/mod.ts";
 // MIN_READ is the minimum ArrayBuffer size passed to a read call by
 // buffer.ReadFrom. As long as the Buffer has at least MIN_READ bytes beyond
 // what is required to hold the contents of r, readFrom() will not grow the

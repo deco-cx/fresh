@@ -20,7 +20,7 @@ var _JSONCParser_instances, _JSONCParser_whitespace, _JSONCParser_numberEndToken
  *
  * @module
  */
-import { assert } from "../assert/assert.js";
+import { assert } from "../assert/assert.ts";
 /**
  * Converts a JSON with Comments (JSONC) string into an object.
  * If a syntax error is found, throw a SyntaxError.

@@ -1,4 +1,4 @@
-import type { SemVer } from "./types.js";
+import type { SemVer } from "./types.ts";
 /**
  * A reverse comparison of two versions. Same as compare but
  * `1` and `-1` are inverted.

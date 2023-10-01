@@ -11,7 +11,7 @@ import {
   CHAR_LOWERCASE_Z,
   CHAR_UPPERCASE_A,
   CHAR_UPPERCASE_Z,
-} from "./_constants.js";
+} from "./_constants.ts";
 
 export function assertPath(path: string) {
   if (typeof path !== "string") {

@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { CHAR_COLON } from "./_constants.js";
-import { assertPath, isPathSeparator, isPosixPathSeparator, isWindowsDeviceRoot, } from "./_util.js";
+import { CHAR_COLON } from "./_constants.ts";
+import { assertPath, isPathSeparator, isPosixPathSeparator, isWindowsDeviceRoot, } from "./_util.ts";
 /**
  * Verifies whether provided path is absolute
  * @param path to be verified as absolute

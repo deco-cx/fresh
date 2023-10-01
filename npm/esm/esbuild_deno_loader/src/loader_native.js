@@ -10,10 +10,10 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _NativeLoader_instances, _NativeLoader_infoCache, _NativeLoader_linkDirCache, _NativeLoader_nodeModulesDirForPackageInner;
-import * as dntShim from "../../_dnt.shims.js";
-import { base32Encode, DenoDir, dirname, fromFileUrl, join, } from "../deps.js";
-import * as deno from "./deno.js";
-import { mapContentType, mediaTypeToLoader, parseNpmSpecifier, } from "./shared.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { base32Encode, DenoDir, dirname, fromFileUrl, join, } from "../deps.ts";
+import * as deno from "./deno.ts";
+import { mapContentType, mediaTypeToLoader, parseNpmSpecifier, } from "./shared.ts";
 let DENO_DIR;
 export class NativeLoader {
     constructor(options) {

@@ -1,4 +1,4 @@
-import type { SemVer, SemVerRange } from "./types.js";
+import type { SemVer, SemVerRange } from "./types.ts";
 /** Checks to see if the version is greater than all possible versions of the range. */
 export declare function gtr(version: SemVer, range: SemVerRange): boolean;
 /**

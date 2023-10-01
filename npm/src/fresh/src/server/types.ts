@@ -1,7 +1,7 @@
-import * as dntShim from "../../../_dnt.shims.js";
+import * as dntShim from "../../../_dnt.shims.ts";
 import { ComponentChildren, ComponentType, VNode } from "preact";
-import * as router from "./router.js";
-import { InnerRenderFunction, RenderContext } from "./render.js";
+import * as router from "./router.ts";
+import { InnerRenderFunction, RenderContext } from "./render.ts";
 
 // --- APPLICATION CONFIGURATION ---
 

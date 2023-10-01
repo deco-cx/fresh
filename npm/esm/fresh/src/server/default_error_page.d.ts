@@ -1,2 +1,2 @@
-import type { ErrorPageProps } from "./types.js";
+import type { ErrorPageProps } from "./types.ts";
 export default function DefaultErrorPage(props: ErrorPageProps): any;

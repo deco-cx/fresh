@@ -1,9 +1,9 @@
-import { bundleAssetUrl } from "../constants.js";
-import { RenderState } from "./state.js";
-import { htmlEscapeJsonString } from "../htmlescape.js";
-import { serialize } from "../serializer.js";
-import { Plugin, PluginRenderResult, PluginRenderStyleTag } from "../types.js";
-import { ContentSecurityPolicy, nonce } from "../../runtime/csp.js";
+import { bundleAssetUrl } from "../constants.ts";
+import { RenderState } from "./state.ts";
+import { htmlEscapeJsonString } from "../htmlescape.ts";
+import { serialize } from "../serializer.ts";
+import { Plugin, PluginRenderResult, PluginRenderStyleTag } from "../types.ts";
+import { ContentSecurityPolicy, nonce } from "../../runtime/csp.ts";
 import { h } from "preact";
 
 function getRandomNonce(

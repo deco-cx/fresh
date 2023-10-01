@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { isSamePath, isSubdir } from "./_util.js";
+import { isSamePath, isSubdir } from "./_util.ts";
 
 const EXISTS_ERROR = new dntShim.Deno.errors.AlreadyExists("dest already exists.");
 

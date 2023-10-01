@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { dirname } from "../path/dirname.js";
-import { resolve } from "../path/resolve.js";
-import { ensureDir, ensureDirSync } from "./ensure_dir.js";
-import { getFileInfoType, toPathString } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { dirname } from "../path/dirname.ts";
+import { resolve } from "../path/resolve.ts";
+import { ensureDir, ensureDirSync } from "./ensure_dir.ts";
+import { getFileInfoType, toPathString } from "./_util.ts";
 const isWindows = dntShim.Deno.build.os === "windows";
 function resolveSymlinkTarget(target, linkName) {
     if (typeof target !== "string")

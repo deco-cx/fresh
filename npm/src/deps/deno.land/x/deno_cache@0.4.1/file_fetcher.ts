@@ -1,11 +1,11 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { AuthTokens } from "./auth_tokens.js";
-import { colors, fromFileUrl, readAll } from "./deps.js";
-import type { LoadResponse } from "./deps.js";
-import type { HttpCache } from "./http_cache.js";
+import { AuthTokens } from "./auth_tokens.ts";
+import { colors, fromFileUrl, readAll } from "./deps.ts";
+import type { LoadResponse } from "./deps.ts";
+import type { HttpCache } from "./http_cache.ts";
 
 /** A setting that determines how the cache is handled for remote dependencies.
  *

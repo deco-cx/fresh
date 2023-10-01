@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { comparatorIntersects } from "./comparator_intersects.js";
-import { parseRange } from "./parse_range.js";
+import { comparatorIntersects } from "./comparator_intersects.ts";
+import { parseRange } from "./parse_range.ts";
 function rangesSatisfiable(ranges) {
     return ranges.every((r) => {
         // For each OR at least one AND must be satisfiable

@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { CHAR_BACKWARD_SLASH } from "./_constants.js";
-import { assertPath, isPosixPathSeparator } from "./_util.js";
-import { posixResolve, windowsResolve } from "./_resolve.js";
+import { CHAR_BACKWARD_SLASH } from "./_constants.ts";
+import { assertPath, isPosixPathSeparator } from "./_util.ts";
+import { posixResolve, windowsResolve } from "./_resolve.ts";
 function assertArgs(from, to) {
     assertPath(from);
     assertPath(to);

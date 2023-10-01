@@ -11,10 +11,10 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _RenderContext_id, _RenderContext_state, _RenderContext_styles, _RenderContext_url, _RenderContext_route, _RenderContext_lang;
 import { h } from "preact";
-import { NONE, UNSAFE_INLINE } from "../runtime/csp.js";
-import { RenderState } from "./rendering/state.js";
-import { renderHtml, renderOuterDocument } from "./rendering/template.js";
-import { renderFreshTags } from "./rendering/fresh_tags.js";
+import { NONE, UNSAFE_INLINE } from "../runtime/csp.ts";
+import { RenderState } from "./rendering/state.ts";
+import { renderHtml, renderOuterDocument } from "./rendering/template.ts";
+import { renderFreshTags } from "./rendering/fresh_tags.ts";
 export const DEFAULT_RENDER_FN = (_ctx, render) => {
     render();
 };

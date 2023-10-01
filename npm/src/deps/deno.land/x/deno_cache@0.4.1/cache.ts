@@ -1,13 +1,13 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { join } from "./deps.js";
-import type { CacheInfo, LoadResponse } from "./deps.js";
-import { DiskCache } from "./disk_cache.js";
-import type { FileFetcher } from "./file_fetcher.js";
-import type { HttpCache } from "./http_cache.js";
-import { isFile, isFileSync } from "./util.js";
+import { join } from "./deps.ts";
+import type { CacheInfo, LoadResponse } from "./deps.ts";
+import { DiskCache } from "./disk_cache.ts";
+import type { FileFetcher } from "./file_fetcher.ts";
+import type { HttpCache } from "./http_cache.ts";
+import { isFile, isFileSync } from "./util.ts";
 
 /** The type of cache information that should be set or retrieved from the
  * cache. */

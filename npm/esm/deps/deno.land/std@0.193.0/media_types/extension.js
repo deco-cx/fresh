@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { extensionsByType } from "./extensions_by_type.js";
+import { extensionsByType } from "./extensions_by_type.ts";
 /**
  * For a given media type, return the most relevant extension, or `undefined`
  * if no extension can be found.

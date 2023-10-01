@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { Operator, SemVer } from "./types.js";
-import { ANY, INVALID, MAX } from "./constants.js";
+import type { Operator, SemVer } from "./types.ts";
+import { ANY, INVALID, MAX } from "./constants.ts";
 
 /**
  * The maximum version that could match this comparator.

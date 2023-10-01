@@ -1,1 +1,1 @@
-export { EsbuildBuilder, } from "./esbuild.js";
+export { EsbuildBuilder, } from "./esbuild.ts";

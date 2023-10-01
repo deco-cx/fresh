@@ -1,4 +1,4 @@
-import { checkAsyncComponent } from "./render.js";
+import { checkAsyncComponent } from "./render.ts";
 export function defineConfig(config) {
     return config;
 }

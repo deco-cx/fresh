@@ -1,6 +1,6 @@
 /// <reference types="node" />
-import { GlobOptions } from "../path/glob.js";
-import { WalkEntry } from "./_util.js";
+import { GlobOptions } from "../path/glob.ts";
+import { WalkEntry } from "./_util.ts";
 export interface ExpandGlobOptions extends Omit<GlobOptions, "os"> {
     root?: string;
     exclude?: string[];

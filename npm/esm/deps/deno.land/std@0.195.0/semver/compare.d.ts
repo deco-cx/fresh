@@ -1,4 +1,4 @@
-import type { SemVer } from "./types.js";
+import type { SemVer } from "./types.ts";
 /**
  * Compare two semantic version objects.
  *

@@ -10,18 +10,18 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _ServerContext_instances, _ServerContext_dev, _ServerContext_routes, _ServerContext_islands, _ServerContext_staticFiles, _ServerContext_renderFn, _ServerContext_middlewares, _ServerContext_app, _ServerContext_layouts, _ServerContext_notFound, _ServerContext_error, _ServerContext_plugins, _ServerContext_builder, _ServerContext_routerOptions, _ServerContext_composeMiddlewares, _ServerContext_handlers, _ServerContext_staticFileHeadHandler, _ServerContext_staticFileGetHandler, _ServerContext_bundleAssetRoute;
-import * as dntShim from "../../../_dnt.shims.js";
-import { dirname, extname, fromFileUrl, join, JSONC, Status, toFileUrl, typeByExtension, walk, } from "./deps.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { dirname, extname, fromFileUrl, join, JSONC, Status, toFileUrl, typeByExtension, walk, } from "./deps.ts";
 import { h } from "preact";
-import * as router from "./router.js";
-import { ALIVE_URL, JS_PREFIX, REFRESH_JS_URL } from "./constants.js";
-import { BUILD_ID } from "./build_id.js";
-import DefaultErrorHandler from "./default_error_page.js";
-import { DEFAULT_RENDER_FN, render as internalRender } from "./render.js";
-import { SELF, } from "../runtime/csp.js";
-import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.js";
-import { EsbuildBuilder } from "../build/mod.js";
-import { setAllIslands } from "./rendering/preact_hooks.js";
+import * as router from "./router.ts";
+import { ALIVE_URL, JS_PREFIX, REFRESH_JS_URL } from "./constants.ts";
+import { BUILD_ID } from "./build_id.ts";
+import DefaultErrorHandler from "./default_error_page.ts";
+import { DEFAULT_RENDER_FN, render as internalRender } from "./render.ts";
+import { SELF, } from "../runtime/csp.ts";
+import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.ts";
+import { EsbuildBuilder } from "../build/mod.ts";
+import { setAllIslands } from "./rendering/preact_hooks.ts";
 const DEFAULT_CONN_INFO = {
     localAddr: { transport: "tcp", hostname: "localhost", port: 8080 },
     remoteAddr: { transport: "tcp", hostname: "localhost", port: 1234 },

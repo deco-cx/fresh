@@ -1,7 +1,7 @@
-import { sort } from "./sort.js";
-import { testRange } from "./test_range.js";
-import { parseRange } from "./parse_range.js";
-import { parse } from "./parse.js";
+import { sort } from "./sort.ts";
+import { testRange } from "./test_range.ts";
+import { parseRange } from "./parse_range.ts";
+import { parse } from "./parse.ts";
 export function maxSatisfying(versions, range, options) {
     const r = typeof range === "string" ? parseRange(range) : range;
     const satisfying = versions.filter((v) => testRange(typeof v === "string" ? parse(v, options) : v, r));

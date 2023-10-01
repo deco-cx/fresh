@@ -1,4 +1,4 @@
-import * as dntShim from "../../../../../_dnt.shims.js";
+import * as dntShim from "../../../../../_dnt.shims.ts";
 export declare class DenoRuntime {
     fs: DenoRuntimeFileSystem;
     path: DenoRuntimePath;

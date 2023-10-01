@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { isSemVer } from "./is_semver.js";
-import { isValidOperator } from "./_shared.js";
-import { ALL, NONE } from "./constants.js";
+import { isSemVer } from "./is_semver.ts";
+import { isValidOperator } from "./_shared.ts";
+import { ALL, NONE } from "./constants.ts";
 /**
  * Does a deep check on the value to see if it is a valid SemVerComparator object.
  *

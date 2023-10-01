@@ -1,6 +1,6 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { gte, join, posix, relative, walk } from "./deps.js";
-import { error } from "./error.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { gte, join, posix, relative, walk } from "./deps.ts";
+import { error } from "./error.ts";
 const MIN_DENO_VERSION = "1.31.0";
 export function ensureMinDenoVersion() {
     // Check that the minimum supported Deno version is being used.

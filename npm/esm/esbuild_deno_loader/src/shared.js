@@ -1,5 +1,5 @@
-import * as dntShim from "../../_dnt.shims.js";
-import { extname, fromFileUrl, JSONC, toFileUrl } from "../deps.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { extname, fromFileUrl, JSONC, toFileUrl } from "../deps.ts";
 export function mediaTypeToLoader(mediaType) {
     switch (mediaType) {
         case "JavaScript":

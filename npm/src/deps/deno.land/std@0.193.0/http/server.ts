@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { delay } from "../async/mod.js";
+import { delay } from "../async/mod.ts";
 
 /** Thrown by Server after it has been closed. */
 const ERROR_SERVER_CLOSED = "Server closed";

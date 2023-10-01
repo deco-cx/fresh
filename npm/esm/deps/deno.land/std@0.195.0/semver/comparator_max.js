@@ -1,4 +1,4 @@
-import { ANY, INVALID, MAX } from "./constants.js";
+import { ANY, INVALID, MAX } from "./constants.ts";
 /**
  * The maximum version that could match this comparator.
  *

@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { encode as hexEncode } from "../encoding/hex.js";
-import { encode as base64Encode } from "../encoding/base64.js";
+import { encode as hexEncode } from "../encoding/hex.ts";
+import { encode as base64Encode } from "../encoding/base64.ts";
 const decoder = new TextDecoder();
 /**
  * Converts a hash to a string with a given encoding.

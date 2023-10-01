@@ -1,4 +1,4 @@
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 /**
  * Test whether or not `dest` is a sub-directory of `src`
  * @param src src file path

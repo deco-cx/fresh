@@ -1,5 +1,5 @@
 import { Fragment, h, options as preactOptions, } from "preact";
-import { assetHashingHook } from "../../runtime/utils.js";
+import { assetHashingHook } from "../../runtime/utils.ts";
 import { renderToString } from "preact-render-to-string";
 const options = preactOptions;
 // Enable error boundaries in Preact.

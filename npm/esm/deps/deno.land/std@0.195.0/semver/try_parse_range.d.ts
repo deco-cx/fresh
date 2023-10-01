@@ -1,4 +1,4 @@
-import { SemVerRange } from "./types.js";
+import { SemVerRange } from "./types.ts";
 /**
  * A tries to parse a valid SemVerRange string or returns undefined
  * @param range The range string

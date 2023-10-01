@@ -1,9 +1,9 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { dirname, ensureDir, extname, isAbsolute, join } from "./deps.js";
-import { assert, CACHE_PERM, isFile, urlToFilename } from "./util.js";
+import { dirname, ensureDir, extname, isAbsolute, join } from "./deps.ts";
+import { assert, CACHE_PERM, isFile, urlToFilename } from "./util.ts";
 
 class Metadata {
   headers: Record<string, string>;

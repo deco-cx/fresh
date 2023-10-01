@@ -429,7 +429,7 @@ declare class InternalDocumentCache {
     _getDocument(filePath: any, absoluteFilePath: any, scriptSnapshot: any, scriptTarget: any, scriptKind: any): any;
     _getKey(filePath: any, scriptTarget: any, scriptKind: any): any;
 }
-import { DenoRuntime } from "./DenoRuntime.js";
+import { DenoRuntime } from "./DenoRuntime.ts";
 declare class FileSystemDocumentCache {
     constructor(fileSystem: any, documentCache: any);
     documentCache: any;

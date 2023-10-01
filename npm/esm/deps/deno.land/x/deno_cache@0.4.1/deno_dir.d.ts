@@ -1,6 +1,6 @@
 /// <reference types="node" />
-import { DiskCache } from "./disk_cache.js";
-import { HttpCache } from "./http_cache.js";
+import { DiskCache } from "./disk_cache.ts";
+import { HttpCache } from "./http_cache.ts";
 export declare class DenoDir {
     deps: HttpCache;
     gen: DiskCache;

@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { consumeMediaParam, decode2331Encoding } from "./_util.js";
+import { consumeMediaParam, decode2331Encoding } from "./_util.ts";
 /**
  * Parses the media type and any optional parameters, per
  * [RFC 1521](https://datatracker.ietf.org/doc/html/rfc1521). Media types are

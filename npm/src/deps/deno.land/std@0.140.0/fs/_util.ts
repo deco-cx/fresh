@@ -1,7 +1,7 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import * as path from "../path/mod.js";
+import * as path from "../path/mod.ts";
 
 /**
  * Test whether or not `dest` is a sub-directory of `src`

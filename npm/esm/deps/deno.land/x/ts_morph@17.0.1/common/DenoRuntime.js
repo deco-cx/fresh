@@ -1,7 +1,7 @@
-import * as dntShim from "../../../../../_dnt.shims.js";
-import { ensureDir, ensureDirSync } from "../../../std@0.140.0/fs/ensure_dir.js";
-import { expandGlob, expandGlobSync } from "../../../std@0.140.0/fs/expand_glob.js";
-import * as stdPath from "../../../std@0.140.0/path/mod.js";
+import * as dntShim from "../../../../../_dnt.shims.ts";
+import { ensureDir, ensureDirSync } from "../../../std@0.140.0/fs/ensure_dir.ts";
+import { expandGlob, expandGlobSync } from "../../../std@0.140.0/fs/expand_glob.ts";
+import * as stdPath from "../../../std@0.140.0/path/mod.ts";
 export class DenoRuntime {
     constructor() {
         Object.defineProperty(this, "fs", {

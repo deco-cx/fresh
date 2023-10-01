@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { isWindows } from "./_os.js";
-import { posixBasename, windowsBasename } from "./_basename.js";
+import { isWindows } from "./_os.ts";
+import { posixBasename, windowsBasename } from "./_basename.ts";
 
 /**
  * Return the last portion of a `path`.

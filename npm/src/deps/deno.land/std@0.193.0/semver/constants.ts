@@ -1,5 +1,5 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer, SemVerComparator } from "./types.js";
+import type { SemVer, SemVerComparator } from "./types.ts";
 
 /**
  * MAX is a sentinel value used by some range calculations.

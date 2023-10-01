@@ -1,4 +1,4 @@
-import type { FormatInputPathObject } from "./_interface.js";
+import type { FormatInputPathObject } from "./_interface.ts";
 /**
  * Generate a path from `FormatInputPathObject` object.
  * @param pathObject with path

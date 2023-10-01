@@ -1,4 +1,4 @@
-import type { SemVerComparator } from "./types.js";
+import type { SemVerComparator } from "./types.ts";
 /**
  * Formats the comparator into a string
  * @example >=0.0.0

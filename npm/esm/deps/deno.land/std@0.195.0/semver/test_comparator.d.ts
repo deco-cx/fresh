@@ -1,4 +1,4 @@
-import type { SemVer, SemVerComparator } from "./types.js";
+import type { SemVer, SemVerComparator } from "./types.ts";
 /**
  * Test to see if a semantic version falls within the range of the comparator.
  * @param version The version to compare

@@ -1,7 +1,7 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { dirname, ensureDir, fromFileUrl, isAbsolute, join, readAll, sep, writeAll, } from "./deps.js";
-import { assert, CACHE_PERM, urlToFilename } from "./util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { dirname, ensureDir, fromFileUrl, isAbsolute, join, readAll, sep, writeAll, } from "./deps.ts";
+import { assert, CACHE_PERM, urlToFilename } from "./util.ts";
 export class DiskCache {
     constructor(location) {
         Object.defineProperty(this, "location", {

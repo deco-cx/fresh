@@ -1,4 +1,4 @@
-import { Operator } from "./types.js";
+import { Operator } from "./types.ts";
 export declare function compareNumber(a: number, b: number): 1 | 0 | -1;
 export declare function checkIdentifier(v1: ReadonlyArray<string | number>, v2: ReadonlyArray<string | number>): 1 | 0 | -1;
 export declare function compareIdentifier(v1: ReadonlyArray<string | number>, v2: ReadonlyArray<string | number>): 1 | 0 | -1;

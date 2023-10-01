@@ -1,5 +1,5 @@
-import { gte } from "./gte.js";
-import { lte } from "./lte.js";
+import { gte } from "./gte.ts";
+import { lte } from "./lte.ts";
 /**
  * Test to see if the version satisfies the range.
  * @param version The version to test

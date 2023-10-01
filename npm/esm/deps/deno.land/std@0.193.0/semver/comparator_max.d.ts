@@ -1,4 +1,4 @@
-import type { Operator, SemVer } from "./types.js";
+import type { Operator, SemVer } from "./types.ts";
 /**
  * The maximum version that could match this comparator.
  *

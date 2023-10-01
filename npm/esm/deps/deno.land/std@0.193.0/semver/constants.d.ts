@@ -1,4 +1,4 @@
-import type { SemVer, SemVerComparator } from "./types.js";
+import type { SemVer, SemVerComparator } from "./types.ts";
 /**
  * MAX is a sentinel value used by some range calculations.
  * It is equivalent to `∞.∞.∞`.

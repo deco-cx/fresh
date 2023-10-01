@@ -1,8 +1,8 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { ServerContext } from "../server/context.js";
-import { FreshOptions, Manifest } from "../server/mod.js";
-import { dirname, fromFileUrl, join, toFileUrl } from "../server/deps.js";
-import { fs } from "./deps.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { ServerContext } from "../server/context.ts";
+import { FreshOptions, Manifest } from "../server/mod.ts";
+import { dirname, fromFileUrl, join, toFileUrl } from "../server/deps.ts";
+import { fs } from "./deps.ts";
 
 export async function build(
   manifestPath: string,

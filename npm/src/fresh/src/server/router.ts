@@ -1,4 +1,4 @@
-import { BaseRoute, ErrorHandlerContext, ServeHandlerInfo } from "./types.js";
+import { BaseRoute, ErrorHandlerContext, ServeHandlerInfo } from "./types.ts";
 
 type HandlerContext<T = unknown> = T & ServeHandlerInfo;
 

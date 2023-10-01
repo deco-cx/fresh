@@ -1,5 +1,5 @@
-import { GlobOptions } from "../path/mod.js";
-import { WalkEntry } from "./walk.js";
+import { GlobOptions } from "../path/mod.ts";
+import { WalkEntry } from "./walk.ts";
 export interface ExpandGlobOptions extends Omit<GlobOptions, "os"> {
     root?: string;
     exclude?: string[];

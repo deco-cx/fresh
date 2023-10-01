@@ -1,5 +1,5 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
 import {
@@ -11,8 +11,8 @@ import {
   readAll,
   sep,
   writeAll,
-} from "./deps.js";
-import { assert, CACHE_PERM, urlToFilename } from "./util.js";
+} from "./deps.ts";
+import { assert, CACHE_PERM, urlToFilename } from "./util.ts";
 
 export class DiskCache {
   location: string;

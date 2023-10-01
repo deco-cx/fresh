@@ -1,4 +1,4 @@
-import { RenderState } from "./state.js";
+import { RenderState } from "./state.ts";
 export declare function renderHtml(state: RenderState): any;
 export declare function renderOuterDocument(state: RenderState, opts: {
     bodyHtml: string;

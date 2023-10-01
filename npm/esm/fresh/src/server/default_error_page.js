@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { DEBUG } from "./constants.js";
+import { DEBUG } from "./constants.ts";
 export default function DefaultErrorPage(props) {
     const { error } = props;
     let message = undefined;

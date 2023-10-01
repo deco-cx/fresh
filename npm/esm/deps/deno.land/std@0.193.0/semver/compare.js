@@ -1,5 +1,5 @@
-import { parse } from "./parse.js";
-import { checkIdentifier, compareIdentifier, compareNumber, } from "./_shared.js";
+import { parse } from "./parse.ts";
+import { checkIdentifier, compareIdentifier, compareNumber, } from "./_shared.ts";
 export function compare(s0, s1, options) {
     const v0 = parse(s0, options);
     const v1 = parse(s1, options);

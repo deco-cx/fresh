@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { ANY } from "./constants.js";
-import type { FormatStyle, SemVer } from "./types.js";
+import { ANY } from "./constants.ts";
+import type { FormatStyle, SemVer } from "./types.ts";
 
 function formatNumber(value: number) {
   if (value === Number.POSITIVE_INFINITY) {

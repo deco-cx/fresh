@@ -1,5 +1,5 @@
-import { resolveImportMap, resolveModuleSpecifier, toFileUrl, } from "../deps.js";
-import { readDenoConfig, urlToEsbuildResolution } from "./shared.js";
+import { resolveImportMap, resolveModuleSpecifier, toFileUrl, } from "../deps.ts";
+import { readDenoConfig, urlToEsbuildResolution } from "./shared.ts";
 export const IN_NODE_MODULES = Symbol("IN_NODE_MODULES");
 export const IN_NODE_MODULES_RESOLVED = Symbol("IN_NODE_MODULES_RESOLVED");
 /**

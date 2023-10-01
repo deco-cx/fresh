@@ -1,4 +1,4 @@
-import { format } from "./format.js";
+import { format } from "./format.ts";
 /**
  * Formats the comparator into a string
  * @example >=0.0.0

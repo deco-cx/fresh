@@ -1,4 +1,4 @@
-import { esbuild } from "../deps.js";
+import { esbuild } from "../deps.ts";
 export interface DenoLoaderPluginOptions {
     /**
      * Specify which loader to use. By default this will use the `native` loader,

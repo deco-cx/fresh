@@ -1,4 +1,4 @@
-import { escapeForWithinString, getStringFromStrOrFunc } from "./utils/string_utils.js";
+import { escapeForWithinString, getStringFromStrOrFunc } from "./utils/string_utils.ts";
 
 /** @internal */
 enum CommentChar {

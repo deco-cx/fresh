@@ -49,7 +49,7 @@
  * @module
  */
 // deno-lint-ignore no-explicit-any
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 const { Deno } = dntShim.dntGlobalThis;
 const noColor = typeof Deno?.noColor === "boolean"
     ? Deno.noColor

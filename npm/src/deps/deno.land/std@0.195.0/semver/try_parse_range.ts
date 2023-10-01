@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 
-import { SemVerRange } from "./types.js";
-import { parseRange } from "./parse_range.js";
+import { SemVerRange } from "./types.ts";
+import { parseRange } from "./parse_range.ts";
 
 /**
  * A tries to parse a valid SemVerRange string or returns undefined

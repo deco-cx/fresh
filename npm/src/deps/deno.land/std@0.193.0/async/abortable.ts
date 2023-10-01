@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { deferred } from "./deferred.js";
+import { deferred } from "./deferred.ts";
 
 /**
  * Make Promise abortable with the given signal.

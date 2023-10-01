@@ -1,6 +1,6 @@
-import { isValidNumber } from "./_shared.js";
-import { isSemVer } from "./is_semver.js";
-import { FULL, MAX_LENGTH, NUMERICIDENTIFIER, re, src } from "./_shared.js";
+import { isValidNumber } from "./_shared.ts";
+import { isSemVer } from "./is_semver.ts";
+import { FULL, MAX_LENGTH, NUMERICIDENTIFIER, re, src } from "./_shared.ts";
 /**
  * Attempt to parse a string as a semantic version, returning either a `SemVer`
  * object or throws a TypeError.

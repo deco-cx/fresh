@@ -1,8 +1,8 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { join, Sha256 } from "./deps.js";
+import { join, Sha256 } from "./deps.ts";
 
 export const CACHE_PERM = 0o644;
 

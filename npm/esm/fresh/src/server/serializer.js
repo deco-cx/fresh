@@ -18,7 +18,7 @@
  * The corresponding deserializer is in `src/runtime/deserializer.ts`.
  */
 import { isValidElement } from "preact";
-import { KEY } from "../runtime/deserializer.js";
+import { KEY } from "../runtime/deserializer.ts";
 // deno-lint-ignore no-explicit-any
 function isSignal(x) {
     return (x !== null &&

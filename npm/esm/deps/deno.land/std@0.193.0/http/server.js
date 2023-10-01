@@ -11,8 +11,8 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _Server_instances, _Server_port, _Server_host, _Server_handler, _Server_closed, _Server_listeners, _Server_acceptBackoffDelayAbortController, _Server_httpConnections, _Server_onError, _Server_respond, _Server_serveHttp, _Server_accept, _Server_closeHttpConn, _Server_trackListener, _Server_untrackListener, _Server_trackHttpConnection, _Server_untrackHttpConnection;
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { delay } from "../async/mod.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { delay } from "../async/mod.ts";
 /** Thrown by Server after it has been closed. */
 const ERROR_SERVER_CLOSED = "Server closed";
 /** Default port for serving HTTP. */

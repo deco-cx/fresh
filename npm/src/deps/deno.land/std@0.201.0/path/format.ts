@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { isWindows } from "./_os.js";
-import { posixFormat, windowsFormat } from "./_format.js";
-import { FormatInputPathObject } from "./_interface.js";
+import { isWindows } from "./_os.ts";
+import { posixFormat, windowsFormat } from "./_format.ts";
+import { FormatInputPathObject } from "./_interface.ts";
 
 /**
  * Generate a path from `FormatInputPathObject` object.

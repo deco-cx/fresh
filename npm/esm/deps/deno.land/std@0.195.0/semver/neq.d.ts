@@ -1,4 +1,4 @@
-import type { SemVer } from "./types.js";
+import type { SemVer } from "./types.ts";
 /** Not equal comparison */
 export declare function neq(s0: SemVer, s1: SemVer): boolean;
 /**

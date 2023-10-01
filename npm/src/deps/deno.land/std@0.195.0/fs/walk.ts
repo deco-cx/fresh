@@ -2,16 +2,16 @@
 // Documentation and interface for walk were adapted from Go
 // https://golang.org/pkg/path/filepath/#Walk
 // Copyright 2009 The Go Authors. All rights reserved. BSD license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { assert } from "../assert/assert.js";
-import { join, normalize } from "../path/mod.js";
+import { assert } from "../assert/assert.ts";
+import { join, normalize } from "../path/mod.ts";
 import {
   createWalkEntry,
   createWalkEntrySync,
   toPathString,
   WalkEntry,
-} from "./_util.js";
+} from "./_util.ts";
 
 export class WalkError extends Error {
   override cause: unknown;

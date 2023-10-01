@@ -1,4 +1,4 @@
-import type { SemVerRange } from "./types.js";
+import type { SemVerRange } from "./types.ts";
 /**
  * Formats the range into a string
  * @example >=0.0.0 || <1.0.0

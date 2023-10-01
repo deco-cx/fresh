@@ -12,12 +12,12 @@ import {
   Route,
   RouteContext,
   UnknownPage,
-} from "./types.js";
-import { NONE, UNSAFE_INLINE } from "../runtime/csp.js";
-import { ContentSecurityPolicy } from "../runtime/csp.js";
-import { RenderState } from "./rendering/state.js";
-import { renderHtml, renderOuterDocument } from "./rendering/template.js";
-import { renderFreshTags } from "./rendering/fresh_tags.js";
+} from "./types.ts";
+import { NONE, UNSAFE_INLINE } from "../runtime/csp.ts";
+import { ContentSecurityPolicy } from "../runtime/csp.ts";
+import { RenderState } from "./rendering/state.ts";
+import { renderHtml, renderOuterDocument } from "./rendering/template.tsx";
+import { renderFreshTags } from "./rendering/fresh_tags.tsx";
 
 export const DEFAULT_RENDER_FN: RenderFunction = (_ctx, render) => {
   render();

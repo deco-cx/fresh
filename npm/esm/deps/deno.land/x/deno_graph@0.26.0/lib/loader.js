@@ -1,5 +1,5 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../../_dnt.shims.js";
+import * as dntShim from "../../../../../_dnt.shims.ts";
 const hasPermissions = "permissions" in dntShim.Deno;
 let readRequested = false;
 const netRequested = new Set();

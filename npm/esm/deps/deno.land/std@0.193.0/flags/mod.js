@@ -32,7 +32,7 @@
  *
  * @module
  */
-import { assert } from "../_util/asserts.js";
+import { assert } from "../_util/asserts.ts";
 const { hasOwn } = Object;
 function get(obj, key) {
     if (hasOwn(obj, key)) {

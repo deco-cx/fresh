@@ -1,4 +1,4 @@
-import type { SemVerComparator } from "./types.js";
+import type { SemVerComparator } from "./types.ts";
 /**
  * Does a deep check on the value to see if it is a valid SemVerComparator object.
  *

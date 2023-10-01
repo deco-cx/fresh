@@ -1,5 +1,5 @@
-import { esbuild } from "./deps.js";
-import { Builder } from "./mod.js";
+import { esbuild } from "./deps.ts";
+import { Builder } from "./mod.ts";
 export interface EsbuildBuilderOptions {
     /** The build ID. */
     buildID: string;

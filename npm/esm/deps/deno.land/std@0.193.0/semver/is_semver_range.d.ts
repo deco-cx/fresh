@@ -1,4 +1,4 @@
-import type { SemVerRange } from "./types.js";
+import type { SemVerRange } from "./types.ts";
 /**
  * Does a deep check on the object to determine if its a valid range.
  *

@@ -1,6 +1,6 @@
-import { RenderState } from "./state.js";
-import { Plugin, PluginRenderResult } from "../types.js";
-import { ContentSecurityPolicy } from "../../runtime/csp.js";
+import { RenderState } from "./state.ts";
+import { Plugin, PluginRenderResult } from "../types.ts";
+import { ContentSecurityPolicy } from "../../runtime/csp.ts";
 export declare function renderFreshTags(renderState: RenderState, opts: {
     bodyHtml: string;
     csp?: ContentSecurityPolicy;

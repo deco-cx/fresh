@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import type { FormatInputPathObject, ParsedPath } from "./_interface.js";
+import type { FormatInputPathObject, ParsedPath } from "./_interface.ts";
 export declare const sep = "/";
 export declare const delimiter = ":";
 /**

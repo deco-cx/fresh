@@ -1,9 +1,9 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { LayoutConfig } from "../../server.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { LayoutConfig } from "../../server.ts";
 import { ComponentChildren } from "preact";
-import { ServerContext } from "./context.js";
-export { Status } from "./deps.js";
-import { colors, serve } from "./deps.js";
+import { ServerContext } from "./context.ts";
+export { Status } from "./deps.ts";
+import { colors, serve } from "./deps.ts";
 import {
   ErrorHandler,
   Handler,
@@ -15,13 +15,13 @@ import {
   ServeHandlerInfo,
   StartOptions,
   UnknownHandler,
-} from "./types.js";
+} from "./types.ts";
 export {
   defineApp,
   defineConfig,
   defineLayout,
   defineRoute,
-} from "./defines.js";
+} from "./defines.ts";
 export type {
   AppContext,
   AppProps,
@@ -56,9 +56,9 @@ export type {
   UnknownHandler,
   UnknownHandlerContext,
   UnknownPageProps,
-} from "./types.js";
-export { RenderContext } from "./render.js";
-export type { InnerRenderFunction } from "./render.js";
+} from "./types.ts";
+export { RenderContext } from "./render.ts";
+export type { InnerRenderFunction } from "./render.ts";
 
 export interface Manifest {
   routes: Record<
@@ -114,7 +114,7 @@ export async function start(routes: Manifest, opts: StartOptions = {}) {
   const ctx = await ServerContext.fromManifest(routes, opts);
 
   if (!opts.onListen) {
-    opts.onListen = (params) => {
+    opts.onListen = (params: any) => {
       console.log();
       console.log(
         colors.bgRgb8(colors.black(colors.bold(" 🍋 Fresh ready ")), 121),

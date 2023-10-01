@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { ANY, INVALID } from "./constants.js";
-import { isValidNumber, isValidString } from "./_shared.js";
+import { ANY, INVALID } from "./constants.ts";
+import { isValidNumber, isValidString } from "./_shared.ts";
 /**
  * Checks to see if value is a valid SemVer object. It does a check
  * into each field including prerelease and build.

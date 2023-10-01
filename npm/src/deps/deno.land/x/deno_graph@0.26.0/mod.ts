@@ -21,8 +21,8 @@
 import {
   createGraph as jsCreateGraph,
   parseModule as jsParseModule,
-} from "./lib/deno_graph.generated.js";
-import { load as defaultLoad } from "./lib/loader.js";
+} from "./lib/deno_graph.generated.ts";
+import { load as defaultLoad } from "./lib/loader.ts";
 import type {
   CacheInfo,
   LoadResponse,
@@ -33,7 +33,7 @@ import type {
   TypesDependency,
 } from "./lib/types";
 
-export { load } from "./lib/loader.js";
+export { load } from "./lib/loader.ts";
 export type {
   CacheInfo,
   Dependency,

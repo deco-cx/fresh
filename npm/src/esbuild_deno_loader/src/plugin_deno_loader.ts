@@ -1,16 +1,16 @@
-import * as dntShim from "../../_dnt.shims.js";
-import { esbuild, join } from "../deps.js";
-import { NativeLoader } from "./loader_native.js";
-import { PortableLoader } from "./loader_portable.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { esbuild, join } from "../deps.ts";
+import { NativeLoader } from "./loader_native.ts";
+import { PortableLoader } from "./loader_portable.ts";
 import {
   IN_NODE_MODULES,
   IN_NODE_MODULES_RESOLVED,
-} from "./plugin_deno_resolver.js";
+} from "./plugin_deno_resolver.ts";
 import {
   esbuildResolutionToURL,
   Loader,
   urlToEsbuildResolution,
-} from "./shared.js";
+} from "./shared.ts";
 
 export interface DenoLoaderPluginOptions {
   /**

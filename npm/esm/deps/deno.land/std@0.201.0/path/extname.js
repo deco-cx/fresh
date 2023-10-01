@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { isWindows } from "./_os.js";
-import { posixExtname, windowsExtname } from "./_extname.js";
+import { isWindows } from "./_os.ts";
+import { posixExtname, windowsExtname } from "./_extname.ts";
 /**
  * Return the extension of the `path` with leading period.
  * @param path with extension

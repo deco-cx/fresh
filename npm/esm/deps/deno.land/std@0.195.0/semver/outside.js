@@ -1,12 +1,12 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { gt } from "./gt.js";
-import { gte } from "./gte.js";
-import { lte } from "./lte.js";
-import { lt } from "./lt.js";
-import { ALL, ANY } from "./constants.js";
-import { parse } from "./parse.js";
-import { testRange } from "./test_range.js";
-import { parseRange } from "./parse_range.js";
+import { gt } from "./gt.ts";
+import { gte } from "./gte.ts";
+import { lte } from "./lte.ts";
+import { lt } from "./lt.ts";
+import { ALL, ANY } from "./constants.ts";
+import { parse } from "./parse.ts";
+import { testRange } from "./test_range.ts";
+import { parseRange } from "./parse_range.ts";
 export function outside(v, r, hilo, options) {
     const version = parse(v);
     const range = typeof r === "string" ? parseRange(r) : r;

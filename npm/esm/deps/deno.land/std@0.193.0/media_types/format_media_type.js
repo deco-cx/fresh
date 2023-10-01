@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { isIterator, isToken, needsEncoding } from "./_util.js";
+import { isIterator, isToken, needsEncoding } from "./_util.ts";
 /** Serializes the media type and the optional parameters as a media type
  * conforming to RFC 2045 and RFC 2616.
  *

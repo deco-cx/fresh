@@ -1,9 +1,9 @@
-import { RenderState } from "./state.js";
-import { setRenderState } from "./preact_hooks.js";
+import { RenderState } from "./state.ts";
+import { setRenderState } from "./preact_hooks.ts";
 import { renderToString } from "preact-render-to-string";
 import { Fragment, h } from "preact";
-import { HEAD_CONTEXT } from "../../runtime/head.js";
-import { CSP_CONTEXT } from "../../runtime/csp.js";
+import { HEAD_CONTEXT } from "../../runtime/head.ts";
+import { CSP_CONTEXT } from "../../runtime/csp.ts";
 
 export function renderHtml(state: RenderState) {
   setRenderState(state);

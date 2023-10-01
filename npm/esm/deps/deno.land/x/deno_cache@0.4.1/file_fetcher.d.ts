@@ -1,6 +1,6 @@
 /// <reference types="node" />
-import type { LoadResponse } from "./deps.js";
-import type { HttpCache } from "./http_cache.js";
+import type { LoadResponse } from "./deps.ts";
+import type { HttpCache } from "./http_cache.ts";
 /** A setting that determines how the cache is handled for remote dependencies.
  *
  * The default is `"use"`.

@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { comparatorIntersects } from "./comparator_intersects.js";
-import { parseRange } from "./parse_range.js";
-import type { SemVerComparator, SemVerRange } from "./types.js";
+import { comparatorIntersects } from "./comparator_intersects.ts";
+import { parseRange } from "./parse_range.ts";
+import type { SemVerComparator, SemVerRange } from "./types.ts";
 
 function rangesSatisfiable(ranges: SemVerRange[]): boolean {
   return ranges.every((r) => {

@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { isWindows } from "./_os.js";
-import { posixToFileUrl, windowsToFileUrl } from "./_to_file_url.js";
+import { isWindows } from "./_os.ts";
+import { posixToFileUrl, windowsToFileUrl } from "./_to_file_url.ts";
 
 /**
  * Converts a path string to a file URL.

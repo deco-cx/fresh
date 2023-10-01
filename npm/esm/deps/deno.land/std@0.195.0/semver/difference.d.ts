@@ -1,4 +1,4 @@
-import type { ReleaseType, SemVer } from "./types.js";
+import type { ReleaseType, SemVer } from "./types.ts";
 /** Returns difference between two versions by the release type, or
  * `undefined` if the versions are the same. */
 export declare function difference(s0: SemVer, s1: SemVer): ReleaseType | undefined;

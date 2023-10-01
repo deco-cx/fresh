@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { Operator, SemVer } from "./types.js";
-import { ANY, MAX, MIN } from "./constants.js";
-import { gt } from "./gt.js";
-import { increment } from "./increment.js";
+import type { Operator, SemVer } from "./types.ts";
+import { ANY, MAX, MIN } from "./constants.ts";
+import { gt } from "./gt.ts";
+import { increment } from "./increment.ts";
 
 /**
  * The minimum semantic version that could match this comparator

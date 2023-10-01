@@ -1,4 +1,4 @@
-export { deflate, inflate, gzip, gunzip, zlib, unzlib, } from "./pkg/denoflate.js";
-import init from "./pkg/denoflate.js";
-import { wasm } from "./pkg/denoflate_bg.wasm.js";
+export { deflate, inflate, gzip, gunzip, zlib, unzlib, } from "./pkg/denoflate.ts";
+import init from "./pkg/denoflate.ts";
+import { wasm } from "./pkg/denoflate_bg.wasm.ts";
 await init(wasm);

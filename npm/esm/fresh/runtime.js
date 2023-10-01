@@ -1,4 +1,4 @@
-import "../_dnt.polyfills.js";
-export * from "./src/runtime/utils.js";
-export * from "./src/runtime/head.js";
-export * from "./src/runtime/csp.js";
+import "../_dnt.polyfills.ts";
+export * from "./src/runtime/utils.ts";
+export * from "./src/runtime/head.ts";
+export * from "./src/runtime/csp.ts";

@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { parseMediaType } from "./parse_media_type.js";
-import { extensions } from "./_util.js";
+import { parseMediaType } from "./parse_media_type.ts";
+import { extensions } from "./_util.ts";
 
 export { extensions };
 

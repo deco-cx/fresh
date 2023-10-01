@@ -2,10 +2,10 @@
 // Documentation and interface for walk were adapted from Go
 // https://golang.org/pkg/path/filepath/#Walk
 // Copyright 2009 The Go Authors. All rights reserved. BSD license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { assert } from "../_util/asserts.js";
-import { join, normalize } from "../path/mod.js";
-import { createWalkEntry, createWalkEntrySync, toPathString, } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { assert } from "../_util/asserts.ts";
+import { join, normalize } from "../path/mod.ts";
+import { createWalkEntry, createWalkEntrySync, toPathString, } from "./_util.ts";
 export class WalkError extends Error {
     constructor(cause, path) {
         super(`${cause instanceof Error ? cause.message : cause} for path "${path}"`);

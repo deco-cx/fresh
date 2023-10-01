@@ -1,5 +1,5 @@
-import { parse } from "./parse.js";
-import { eq } from "./eq.js";
+import { parse } from "./parse.ts";
+import { eq } from "./eq.ts";
 export function difference(sv0, sv1, options) {
     const s0 = parse(sv0);
     const s1 = parse(sv1);

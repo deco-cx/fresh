@@ -1,4 +1,4 @@
-import type { SemVer, SemVerRange } from "./types.js";
+import type { SemVer, SemVerRange } from "./types.ts";
 /**
  * Returns the lowest version in the list that satisfies the range, or `undefined` if
  * none of them do.

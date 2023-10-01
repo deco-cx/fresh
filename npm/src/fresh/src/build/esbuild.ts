@@ -1,4 +1,4 @@
-import * as dntShim from "../../../_dnt.shims.js";
+import * as dntShim from "../../../_dnt.shims.ts";
 import {
   denoPlugins,
   esbuild,
@@ -7,10 +7,10 @@ import {
   fromFileUrl,
   regexpEscape,
   toFileUrl,
-} from "./deps.js";
-import { getDependencies, saveSnapshot } from "./kv.js";
-import { getFile } from "./kvfs.js";
-import { Builder } from "./mod.js";
+} from "./deps.ts";
+import { getDependencies, saveSnapshot } from "./kv.ts";
+import { getFile } from "./kvfs.ts";
+import { Builder } from "./mod.ts";
 
 export interface EsbuildBuilderOptions {
   /** The build ID. */

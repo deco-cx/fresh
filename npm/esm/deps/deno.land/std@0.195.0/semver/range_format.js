@@ -1,4 +1,4 @@
-import { comparatorFormat } from "./comparator_format.js";
+import { comparatorFormat } from "./comparator_format.ts";
 /**
  * Formats the range into a string
  * @example >=0.0.0 || <1.0.0

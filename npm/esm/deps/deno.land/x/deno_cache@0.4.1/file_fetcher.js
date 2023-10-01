@@ -11,9 +11,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _FileFetcher_instances, _FileFetcher_allowRemote, _FileFetcher_authTokens, _FileFetcher_cache, _FileFetcher_cacheSetting, _FileFetcher_httpCache, _FileFetcher_fetchBlobDataUrl, _FileFetcher_fetchCached, _FileFetcher_fetchRemote;
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { AuthTokens } from "./auth_tokens.js";
-import { colors, fromFileUrl, readAll } from "./deps.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { AuthTokens } from "./auth_tokens.ts";
+import { colors, fromFileUrl, readAll } from "./deps.ts";
 function shouldUseCache(cacheSetting, specifier) {
     switch (cacheSetting) {
         case "only":

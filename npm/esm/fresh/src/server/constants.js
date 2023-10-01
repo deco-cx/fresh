@@ -1,6 +1,6 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { INTERNAL_PREFIX } from "../runtime/utils.js";
-import { BUILD_ID } from "./build_id.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { INTERNAL_PREFIX } from "../runtime/utils.ts";
+import { BUILD_ID } from "./build_id.ts";
 export const REFRESH_JS_URL = `${INTERNAL_PREFIX}/refresh.js`;
 export const ALIVE_URL = `${INTERNAL_PREFIX}/alive`;
 export const JS_PREFIX = `/js`;

@@ -1,4 +1,4 @@
-import type { FormatStyle, SemVer } from "./types.js";
+import type { FormatStyle, SemVer } from "./types.ts";
 /**
  * Format a SemVer object into a string.
  *

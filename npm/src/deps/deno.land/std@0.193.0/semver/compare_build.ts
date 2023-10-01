@@ -1,11 +1,11 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer } from "./types.js";
-import { parse } from "./parse.js";
+import type { SemVer } from "./types.ts";
+import { parse } from "./parse.ts";
 import {
   checkIdentifier,
   compareIdentifier,
   compareNumber,
-} from "./_shared.js";
+} from "./_shared.ts";
 
 /**
  * Compare two semantic version objects including build metadata.

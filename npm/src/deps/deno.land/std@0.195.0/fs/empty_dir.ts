@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { join } from "../path/mod.js";
-import { toPathString } from "./_util.js";
+import { join } from "../path/mod.ts";
+import { toPathString } from "./_util.ts";
 
 /**
  * Ensures that a directory is empty.

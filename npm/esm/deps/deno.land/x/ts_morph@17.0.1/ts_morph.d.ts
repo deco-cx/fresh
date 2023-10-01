@@ -1,4 +1,4 @@
-export { default as CodeBlockWriter } from "../code_block_writer@11.0.3/mod.js";
+export { default as CodeBlockWriter } from "../code_block_writer@11.0.3/mod.ts";
 export function AbstractableNode(Base: any): {
     new (): {
         [x: string]: any;
@@ -6633,4 +6633,4 @@ declare class CommaSeparatedStructuresPrinter extends Printer {
     printer: any;
     printText(writer: any, structures: any): void;
 }
-export { CompilerOptionsContainer, DiagnosticCategory, EmitHint, InMemoryFileSystemHost, LanguageVariant, ModuleKind, ModuleResolutionKind, NewLineKind, NodeFlags, ObjectFlags, ResolutionHosts, ScriptKind, ScriptTarget, SettingsContainer, SymbolFlags, SyntaxKind, TypeFlags, TypeFormatFlags, ts } from "./common/mod.js";
+export { CompilerOptionsContainer, DiagnosticCategory, EmitHint, InMemoryFileSystemHost, LanguageVariant, ModuleKind, ModuleResolutionKind, NewLineKind, NodeFlags, ObjectFlags, ResolutionHosts, ScriptKind, ScriptTarget, SettingsContainer, SymbolFlags, SyntaxKind, TypeFlags, TypeFormatFlags, ts } from "./common/mod.ts";

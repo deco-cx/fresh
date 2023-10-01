@@ -9,11 +9,14 @@ await build({
   test: false,
   shims: {
     // see JS docs for overview and more options
-    deno: true,
+    deno: "dev",
   },
   typeCheck: false,
   esModule: true,
-  scriptModule: false,
+  compilerOptions: {
+    lib: ["ES2021", "DOM"],
+  },
+  scriptModule: "umd",
   package: {
     // package.json properties
     name: "@marcosvcp/fresh",

@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import * as path from "../path/mod.js";
-import { basename, normalize } from "../path/mod.js";
+import * as path from "../path/mod.ts";
+import { basename, normalize } from "../path/mod.ts";
 
 /**
  * Test whether `src` and `dest` resolve to the same location

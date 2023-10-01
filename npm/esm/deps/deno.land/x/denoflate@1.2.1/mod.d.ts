@@ -1,1 +1,1 @@
-export { deflate, inflate, gzip, gunzip, zlib, unzlib, } from "./pkg/denoflate.js";
+export { deflate, inflate, gzip, gunzip, zlib, unzlib, } from "./pkg/denoflate.ts";

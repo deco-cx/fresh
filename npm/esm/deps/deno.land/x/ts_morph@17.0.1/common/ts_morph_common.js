@@ -1,5 +1,5 @@
-import { DenoRuntime } from "./DenoRuntime.js";
-import { ts } from "./typescript.js";
+import { DenoRuntime } from "./DenoRuntime.ts";
+import { ts } from "./typescript.ts";
 const ScriptTarget = ts.ScriptTarget;
 export { ts };
 const DiagnosticCategory = ts.DiagnosticCategory;

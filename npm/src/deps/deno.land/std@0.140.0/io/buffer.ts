@@ -1,9 +1,9 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { assert } from "../_util/assert.js";
-import { BytesList } from "../bytes/bytes_list.js";
-import { concat, copy } from "../bytes/mod.js";
+import { assert } from "../_util/assert.ts";
+import { BytesList } from "../bytes/bytes_list.ts";
+import { concat, copy } from "../bytes/mod.ts";
 import type { Reader, ReaderSync, Writer, WriterSync } from "./types";
 
 // MIN_READ is the minimum ArrayBuffer size passed to a read call by

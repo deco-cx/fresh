@@ -1,2 +1,2 @@
 
-export * from "./ts_morph.js";
+export * from "./ts_morph.ts";

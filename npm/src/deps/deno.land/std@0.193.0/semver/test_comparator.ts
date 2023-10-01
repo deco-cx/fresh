@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer, SemVerComparator } from "./types.js";
-import { cmp } from "./cmp.js";
+import type { SemVer, SemVerComparator } from "./types.ts";
+import { cmp } from "./cmp.ts";
 
 /**
  * Test to see if a semantic version falls within the range of the comparator.

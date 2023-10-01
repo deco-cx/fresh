@@ -1,9 +1,9 @@
-import { eq } from "./eq.js";
-import { neq } from "./neq.js";
-import { gte } from "./gte.js";
-import { gt } from "./gt.js";
-import { lt } from "./lt.js";
-import { lte } from "./lte.js";
+import { eq } from "./eq.ts";
+import { neq } from "./neq.ts";
+import { gte } from "./gte.ts";
+import { gt } from "./gt.ts";
+import { lt } from "./lt.ts";
+import { lte } from "./lte.ts";
 export function cmp(s0, operator, s1, options) {
     switch (operator) {
         case "":

@@ -1,6 +1,6 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { gte, join, posix, relative, walk, WalkEntry } from "./deps.js";
-import { error } from "./error.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { gte, join, posix, relative, walk, WalkEntry } from "./deps.ts";
+import { error } from "./error.ts";
 
 const MIN_DENO_VERSION = "1.31.0";
 

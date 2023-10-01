@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { posixIsAbsolute, windowsIsAbsolute } from "./_is_absolute.js";
+import { posixIsAbsolute, windowsIsAbsolute } from "./_is_absolute.ts";
 
 const WHITESPACE_ENCODINGS: Record<string, string> = {
   "\u0009": "%09",

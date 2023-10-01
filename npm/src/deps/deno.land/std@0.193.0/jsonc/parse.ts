@@ -10,10 +10,10 @@
  * @module
  */
 
-import { assert } from "../_util/asserts.js";
+import { assert } from "../_util/asserts.ts";
 
-import type { JsonValue } from "../json/common.js";
-export type { JsonValue } from "../json/common.js";
+import type { JsonValue } from "../json/common.ts";
+export type { JsonValue } from "../json/common.ts";
 
 export interface ParseOptions {
   /** Allow trailing commas at the end of arrays and objects.

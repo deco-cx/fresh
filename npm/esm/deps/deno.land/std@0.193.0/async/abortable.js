@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { deferred } from "./deferred.js";
+import { deferred } from "./deferred.ts";
 export function abortable(p, signal) {
     if (p instanceof Promise) {
         return abortablePromise(p, signal);

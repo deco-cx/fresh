@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVerRange } from "./types.js";
-import { isSemVerComparator } from "./is_semver_comparator.js";
+import type { SemVerRange } from "./types.ts";
+import { isSemVerComparator } from "./is_semver_comparator.ts";
 
 /**
  * Does a deep check on the object to determine if its a valid range.

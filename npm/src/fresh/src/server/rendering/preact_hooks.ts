@@ -7,10 +7,10 @@ import {
   options as preactOptions,
   type VNode,
 } from "preact";
-import { assetHashingHook } from "../../runtime/utils.js";
+import { assetHashingHook } from "../../runtime/utils.ts";
 import { renderToString } from "preact-render-to-string";
-import { RenderState } from "./state.js";
-import { Island } from "../types.js";
+import { RenderState } from "./state.ts";
+import { Island } from "../types.ts";
 
 // These hooks are long stable, but when we originally added them we
 // weren't sure if they should be public.

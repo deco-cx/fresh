@@ -1,13 +1,13 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { gt } from "./gt.js";
-import { gte } from "./gte.js";
-import { lte } from "./lte.js";
-import { lt } from "./lt.js";
-import { ALL, ANY } from "./constants.js";
-import { parse } from "./parse.js";
-import type { SemVer, SemVerComparator, SemVerRange } from "./types.js";
-import { testRange } from "./test_range.js";
-import { parseRange } from "./parse_range.js";
+import { gt } from "./gt.ts";
+import { gte } from "./gte.ts";
+import { lte } from "./lte.ts";
+import { lt } from "./lt.ts";
+import { ALL, ANY } from "./constants.ts";
+import { parse } from "./parse.ts";
+import type { SemVer, SemVerComparator, SemVerRange } from "./types.ts";
+import { testRange } from "./test_range.ts";
+import { parseRange } from "./parse_range.ts";
 
 /**
  * Returns true if the version is outside the bounds of the range in either the

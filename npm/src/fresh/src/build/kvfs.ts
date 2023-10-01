@@ -1,5 +1,5 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { BUILD_ID } from "../server/build_id.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { BUILD_ID } from "../server/build_id.ts";
 
 const CHUNKSIZE = 65536;
 const NAMESPACE = ["_frsh", "js", BUILD_ID];

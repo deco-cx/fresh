@@ -1,9 +1,9 @@
-import * as dntShim from "../../_dnt.shims.js";
-import { join } from "../deps.js";
-import { NativeLoader } from "./loader_native.js";
-import { PortableLoader } from "./loader_portable.js";
-import { IN_NODE_MODULES, IN_NODE_MODULES_RESOLVED, } from "./plugin_deno_resolver.js";
-import { esbuildResolutionToURL, urlToEsbuildResolution, } from "./shared.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { join } from "../deps.ts";
+import { NativeLoader } from "./loader_native.ts";
+import { PortableLoader } from "./loader_portable.ts";
+import { IN_NODE_MODULES, IN_NODE_MODULES_RESOLVED, } from "./plugin_deno_resolver.ts";
+import { esbuildResolutionToURL, urlToEsbuildResolution, } from "./shared.ts";
 const LOADERS = ["native", "portable"];
 /** The default loader to use. */
 export const DEFAULT_LOADER = await dntShim.Deno.permissions.query({ name: "run" })

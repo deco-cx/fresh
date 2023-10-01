@@ -1,4 +1,4 @@
-import type { db } from "./_db.js";
+import type { db } from "./_db.ts";
 type DB = typeof db;
 type ContentTypeToExtension = {
     [K in keyof DB]: DB[K] extends {

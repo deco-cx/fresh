@@ -1,4 +1,4 @@
-import { SemVer } from "./types.js";
+import { SemVer } from "./types.ts";
 /**
  * Attempt to parse a string as a semantic version, returning either a `SemVer`
  * object or throws a TypeError.

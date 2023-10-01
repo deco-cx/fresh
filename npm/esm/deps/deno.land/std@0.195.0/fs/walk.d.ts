@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { WalkEntry } from "./_util.js";
+import { WalkEntry } from "./_util.ts";
 export declare class WalkError extends Error {
     cause: unknown;
     name: string;

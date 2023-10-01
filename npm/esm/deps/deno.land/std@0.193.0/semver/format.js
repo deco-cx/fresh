@@ -1,5 +1,5 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { ANY } from "./constants.js";
+import { ANY } from "./constants.ts";
 function formatNumber(value) {
     if (value === Number.POSITIVE_INFINITY) {
         return "∞";

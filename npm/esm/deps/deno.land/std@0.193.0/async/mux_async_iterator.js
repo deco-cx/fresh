@@ -12,7 +12,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
 var _MuxAsyncIterator_instances, _MuxAsyncIterator_iteratorCount, _MuxAsyncIterator_yields, _MuxAsyncIterator_throws, _MuxAsyncIterator_signal, _MuxAsyncIterator_callIteratorNext;
-import { deferred } from "./deferred.js";
+import { deferred } from "./deferred.ts";
 /**
  * The MuxAsyncIterator class multiplexes multiple async iterators into a single
  * stream. It currently makes an assumption that the final result (the value

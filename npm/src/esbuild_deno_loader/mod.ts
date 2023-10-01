@@ -1,4 +1,4 @@
-import { esbuild } from "./deps.js";
+import { esbuild } from "./deps.ts";
 
 import {
   denoResolverPlugin,
@@ -6,7 +6,7 @@ import {
   type ImportMap,
   type Scopes,
   type SpecifierMap,
-} from "./src/plugin_deno_resolver.js";
+} from "./src/plugin_deno_resolver.ts";
 export {
   denoResolverPlugin,
   DenoResolverPluginOptions,
@@ -19,14 +19,14 @@ import {
   DEFAULT_LOADER,
   denoLoaderPlugin,
   type DenoLoaderPluginOptions,
-} from "./src/plugin_deno_loader.js";
+} from "./src/plugin_deno_loader.ts";
 export { DEFAULT_LOADER, denoLoaderPlugin, DenoLoaderPluginOptions };
 
 export {
   type EsbuildResolution,
   esbuildResolutionToURL,
   urlToEsbuildResolution,
-} from "./src/shared.js";
+} from "./src/shared.ts";
 
 export interface DenoPluginsOptions {
   /**

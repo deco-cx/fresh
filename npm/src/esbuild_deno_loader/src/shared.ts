@@ -1,6 +1,6 @@
-import * as dntShim from "../../_dnt.shims.js";
-import { esbuild, extname, fromFileUrl, JSONC, toFileUrl } from "../deps.js";
-import { MediaType } from "./deno.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { esbuild, extname, fromFileUrl, JSONC, toFileUrl } from "../deps.ts";
+import { MediaType } from "./deno.ts";
 
 export interface Loader {
   resolve(specifier: URL): Promise<LoaderResolution>;

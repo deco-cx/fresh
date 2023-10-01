@@ -1,5 +1,5 @@
 
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 var __defProp = Object.defineProperty;
 var __export = (target, all) => {
@@ -1732,7 +1732,7 @@ function convertOutputFiles({ path, contents, hash }) {
 }
 
 // lib/deno/mod.ts
-import * as denoflate from "../denoflate@1.2.1/mod.js";
+import * as denoflate from "../denoflate@1.2.1/mod.ts";
 var version = "0.19.2";
 var build = (options) => ensureServiceIsRunning().then((service) => service.build(options));
 var context = (options) => ensureServiceIsRunning().then((service) => service.context(options));

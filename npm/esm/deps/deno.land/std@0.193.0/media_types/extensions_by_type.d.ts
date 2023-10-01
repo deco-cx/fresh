@@ -1,4 +1,4 @@
-import { extensions } from "./_util.js";
+import { extensions } from "./_util.ts";
 export { extensions };
 /**
  * Returns the extensions known to be associated with the media type `type`.

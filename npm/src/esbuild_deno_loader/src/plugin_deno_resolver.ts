@@ -6,8 +6,8 @@ import {
   Scopes,
   SpecifierMap,
   toFileUrl,
-} from "../deps.js";
-import { readDenoConfig, urlToEsbuildResolution } from "./shared.js";
+} from "../deps.ts";
+import { readDenoConfig, urlToEsbuildResolution } from "./shared.ts";
 
 export type { ImportMap, Scopes, SpecifierMap };
 

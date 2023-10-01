@@ -1,4 +1,4 @@
-import type { Operator, SemVer } from "./types.js";
+import type { Operator, SemVer } from "./types.ts";
 /**
  * The minimum semantic version that could match this comparator
  * @param semver The semantic version of the comparator

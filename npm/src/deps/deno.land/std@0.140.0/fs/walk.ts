@@ -2,10 +2,10 @@
 // Documentation and interface for walk were adapted from Go
 // https://golang.org/pkg/path/filepath/#Walk
 // Copyright 2009 The Go Authors. All rights reserved. BSD license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { assert } from "../_util/assert.js";
-import { basename, join, normalize } from "../path/mod.js";
+import { assert } from "../_util/assert.ts";
+import { basename, join, normalize } from "../path/mod.ts";
 
 /** Create WalkEntry for the `path` synchronously */
 export function _createWalkEntrySync(path: string): WalkEntry {

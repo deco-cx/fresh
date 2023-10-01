@@ -1,10 +1,10 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { isAbsolute, join, normalize } from "./deps.js";
-import { DiskCache } from "./disk_cache.js";
-import { cacheDir, homeDir } from "./dirs.js";
-import { HttpCache } from "./http_cache.js";
-import { assert } from "./util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { isAbsolute, join, normalize } from "./deps.ts";
+import { DiskCache } from "./disk_cache.ts";
+import { cacheDir, homeDir } from "./dirs.ts";
+import { HttpCache } from "./http_cache.ts";
+import { assert } from "./util.ts";
 export class DenoDir {
     constructor(root, readOnly) {
         Object.defineProperty(this, "deps", {

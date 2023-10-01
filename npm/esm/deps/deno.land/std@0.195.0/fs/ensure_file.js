@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import * as path from "../path/mod.js";
-import { ensureDir, ensureDirSync } from "./ensure_dir.js";
-import { getFileInfoType, toPathString } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import * as path from "../path/mod.ts";
+import { ensureDir, ensureDirSync } from "./ensure_dir.ts";
+import { getFileInfoType, toPathString } from "./_util.ts";
 /**
  * Ensures that the file exists.
  * If the file that is requested to be created is in directories that do not

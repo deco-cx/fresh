@@ -11,10 +11,10 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 };
 var _FetchCacher_instances, _FetchCacher_diskCache, _FetchCacher_fileFetcher, _FetchCacher_httpCache, _FetchCacher_readOnly, _FetchCacher_getEmitMetadata, _FetchCacher_setEmitMetadata;
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { join } from "./deps.js";
-import { DiskCache } from "./disk_cache.js";
-import { isFile, isFileSync } from "./util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { join } from "./deps.ts";
+import { DiskCache } from "./disk_cache.ts";
+import { isFile, isFileSync } from "./util.ts";
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
 /** Provides an interface to Deno's CLI cache.

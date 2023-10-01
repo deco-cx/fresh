@@ -1,11 +1,11 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { Operator, SemVer } from "./types.js";
-import { eq } from "./eq.js";
-import { neq } from "./neq.js";
-import { gte } from "./gte.js";
-import { gt } from "./gt.js";
-import { lt } from "./lt.js";
-import { lte } from "./lte.js";
+import type { Operator, SemVer } from "./types.ts";
+import { eq } from "./eq.ts";
+import { neq } from "./neq.ts";
+import { gte } from "./gte.ts";
+import { gt } from "./gt.ts";
+import { lt } from "./lt.ts";
+import { lte } from "./lte.ts";
 
 /**
  * Do a comparison of two semantic version objects based on the given operator

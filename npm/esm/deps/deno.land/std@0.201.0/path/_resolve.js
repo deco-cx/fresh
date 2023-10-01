@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { CHAR_COLON } from "./_constants.js";
-import { assertPath, isPathSeparator, isPosixPathSeparator, isWindowsDeviceRoot, normalizeString, } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { CHAR_COLON } from "./_constants.ts";
+import { assertPath, isPathSeparator, isPosixPathSeparator, isWindowsDeviceRoot, normalizeString, } from "./_util.ts";
 /**
  * Resolves path segments into a `path`
  * @param pathSegments to process to path

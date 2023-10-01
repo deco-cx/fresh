@@ -1,9 +1,9 @@
-import { esbuild } from "./deps.js";
-import { denoResolverPlugin, type DenoResolverPluginOptions, type ImportMap, type Scopes, type SpecifierMap } from "./src/plugin_deno_resolver.js";
+import { esbuild } from "./deps.ts";
+import { denoResolverPlugin, type DenoResolverPluginOptions, type ImportMap, type Scopes, type SpecifierMap } from "./src/plugin_deno_resolver.ts";
 export { denoResolverPlugin, DenoResolverPluginOptions, ImportMap, Scopes, SpecifierMap, };
-import { DEFAULT_LOADER, denoLoaderPlugin, type DenoLoaderPluginOptions } from "./src/plugin_deno_loader.js";
+import { DEFAULT_LOADER, denoLoaderPlugin, type DenoLoaderPluginOptions } from "./src/plugin_deno_loader.ts";
 export { DEFAULT_LOADER, denoLoaderPlugin, DenoLoaderPluginOptions };
-export { type EsbuildResolution, esbuildResolutionToURL, urlToEsbuildResolution, } from "./src/shared.js";
+export { type EsbuildResolution, esbuildResolutionToURL, urlToEsbuildResolution, } from "./src/shared.ts";
 export interface DenoPluginsOptions {
     /**
      * Specify which loader to use. By default this will use the `native` loader,

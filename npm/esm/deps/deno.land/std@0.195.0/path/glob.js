@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { isWindows, osType } from "../_util/os.js";
-import { SEP, SEP_PATTERN } from "./separator.js";
-import * as _win32 from "./win32.js";
-import * as _posix from "./posix.js";
+import { isWindows, osType } from "../_util/os.ts";
+import { SEP, SEP_PATTERN } from "./separator.ts";
+import * as _win32 from "./win32.ts";
+import * as _posix from "./posix.ts";
 const path = isWindows ? _win32 : _posix;
 const { join, normalize } = path;
 const regExpEscapeChars = [

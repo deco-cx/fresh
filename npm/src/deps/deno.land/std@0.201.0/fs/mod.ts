@@ -6,14 +6,14 @@
  * @module
  */
 
-export * from "./empty_dir.js";
-export * from "./ensure_dir.js";
-export * from "./ensure_file.js";
-export * from "./ensure_link.js";
-export * from "./ensure_symlink.js";
-export * from "./exists.js";
-export * from "./expand_glob.js";
-export * from "./move.js";
-export * from "./copy.js";
-export * from "./walk.js";
-export * from "./eol.js";
+export * from "./empty_dir.ts";
+export * from "./ensure_dir.ts";
+export * from "./ensure_file.ts";
+export * from "./ensure_link.ts";
+export * from "./ensure_symlink.ts";
+export * from "./exists.ts";
+export * from "./expand_glob.ts";
+export * from "./move.ts";
+export * from "./copy.ts";
+export * from "./walk.ts";
+export * from "./eol.ts";

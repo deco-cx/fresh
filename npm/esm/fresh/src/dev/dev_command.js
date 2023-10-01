@@ -1,8 +1,8 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { updateCheck } from "./update_check.js";
-import { DAY, dirname, fromFileUrl, join } from "./deps.js";
-import { build } from "./build.js";
-import { collect, ensureMinDenoVersion, generate } from "./mod.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { updateCheck } from "./update_check.ts";
+import { DAY, dirname, fromFileUrl, join } from "./deps.ts";
+import { build } from "./build.ts";
+import { collect, ensureMinDenoVersion, generate } from "./mod.ts";
 export async function dev(base, entrypoint, options = {}) {
     ensureMinDenoVersion();
     // Run update check in background

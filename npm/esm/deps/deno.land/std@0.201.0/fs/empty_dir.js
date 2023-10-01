@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { join } from "../path/join.js";
-import { toPathString } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { join } from "../path/join.ts";
+import { toPathString } from "./_util.ts";
 /**
  * Ensures that a directory is empty.
  * Deletes directory contents if the directory is not empty.

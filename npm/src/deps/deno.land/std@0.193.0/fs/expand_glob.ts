@@ -1,5 +1,5 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 import {
   GlobOptions,
@@ -9,16 +9,16 @@ import {
   joinGlobs,
   resolve,
   SEP_PATTERN,
-} from "../path/mod.js";
-import { walk, walkSync } from "./walk.js";
-import { assert } from "../_util/asserts.js";
-import { isWindows } from "../_util/os.js";
+} from "../path/mod.ts";
+import { walk, walkSync } from "./walk.ts";
+import { assert } from "../_util/asserts.ts";
+import { isWindows } from "../_util/os.ts";
 import {
   createWalkEntry,
   createWalkEntrySync,
   toPathString,
   WalkEntry,
-} from "./_util.js";
+} from "./_util.ts";
 
 export interface ExpandGlobOptions extends Omit<GlobOptions, "os"> {
   root?: string;

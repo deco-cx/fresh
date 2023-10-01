@@ -1,4 +1,4 @@
-import { getFile, housekeep, isSupported, saveFile } from "./kvfs.js";
+import { getFile, housekeep, isSupported, saveFile } from "./kvfs.ts";
 
 const IS_CHUNK = /\/chunk-[a-zA-Z0-9]*.js/;
 const DEPENDENCIES_SNAP = "dependencies.snap.json";

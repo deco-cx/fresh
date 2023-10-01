@@ -1,4 +1,4 @@
-import * as dntShim from "../../../_dnt.shims.js";
+import * as dntShim from "../../../_dnt.shims.ts";
 import {
   dirname,
   extname,
@@ -9,13 +9,13 @@ import {
   toFileUrl,
   typeByExtension,
   walk,
-} from "./deps.js";
+} from "./deps.ts";
 import { ComponentType, h } from "preact";
-import * as router from "./router.js";
-import { DenoConfig, Manifest } from "./mod.js";
-import { ALIVE_URL, JS_PREFIX, REFRESH_JS_URL } from "./constants.js";
-import { BUILD_ID } from "./build_id.js";
-import DefaultErrorHandler from "./default_error_page.js";
+import * as router from "./router.ts";
+import { DenoConfig, Manifest } from "./mod.ts";
+import { ALIVE_URL, JS_PREFIX, REFRESH_JS_URL } from "./constants.ts";
+import { BUILD_ID } from "./build_id.ts";
+import DefaultErrorHandler from "./default_error_page.ts";
 import {
   AppModule,
   BaseRoute,
@@ -40,17 +40,17 @@ import {
   ServeHandlerInfo,
   UnknownPage,
   UnknownPageModule,
-} from "./types.js";
-import { DEFAULT_RENDER_FN, render as internalRender } from "./render.js";
+} from "./types.ts";
+import { DEFAULT_RENDER_FN, render as internalRender } from "./render.ts";
 import {
   ContentSecurityPolicy,
   ContentSecurityPolicyDirectives,
   SELF,
-} from "../runtime/csp.js";
-import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.js";
-import { Builder, EsbuildBuilder, JSXConfig } from "../build/mod.js";
-import { InternalRoute } from "./router.js";
-import { setAllIslands } from "./rendering/preact_hooks.js";
+} from "../runtime/csp.ts";
+import { ASSET_CACHE_BUST_KEY, INTERNAL_PREFIX } from "../runtime/utils.ts";
+import { Builder, EsbuildBuilder, JSXConfig } from "../build/mod.ts";
+import { InternalRoute } from "./router.ts";
+import { setAllIslands } from "./rendering/preact_hooks.ts";
 
 const DEFAULT_CONN_INFO: ServeHandlerInfo = {
   localAddr: { transport: "tcp", hostname: "localhost", port: 8080 },

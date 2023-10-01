@@ -8,9 +8,9 @@ import {
   Scopes,
   sortObject,
   SpecifierMap,
-} from "./_util.js";
+} from "./_util.ts";
 
-export type { ImportMap, Scopes, SpecifierMap } from "./_util.js";
+export type { ImportMap, Scopes, SpecifierMap } from "./_util.ts";
 
 /* https://wicg.github.io/import-maps/#sort-and-normalize-a-specifier-map */
 function sortAndNormalizeSpecifierMap(

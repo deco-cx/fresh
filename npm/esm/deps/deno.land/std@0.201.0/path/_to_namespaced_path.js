@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { CHAR_BACKWARD_SLASH, CHAR_COLON, CHAR_DOT, CHAR_QUESTION_MARK, } from "./_constants.js";
-import { isWindowsDeviceRoot } from "./_util.js";
-import { windowsResolve } from "./_resolve.js";
+import { CHAR_BACKWARD_SLASH, CHAR_COLON, CHAR_DOT, CHAR_QUESTION_MARK, } from "./_constants.ts";
+import { isWindowsDeviceRoot } from "./_util.ts";
+import { windowsResolve } from "./_resolve.ts";
 /**
  * Resolves path to a namespace path
  * @param path to resolve to namespace

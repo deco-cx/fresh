@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer } from "./types.js";
-import { compare } from "./compare.js";
+import type { SemVer } from "./types.ts";
+import { compare } from "./compare.ts";
 
 /** Greater than or equal to comparison */
 export function gte(

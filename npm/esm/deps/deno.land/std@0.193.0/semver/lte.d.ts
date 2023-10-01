@@ -1,4 +1,4 @@
-import type { SemVer } from "./types.js";
+import type { SemVer } from "./types.ts";
 /** Less than or equal to comparison */
 export declare function lte(s0: SemVer, s1: SemVer): boolean;
 /**

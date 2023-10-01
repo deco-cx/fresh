@@ -1,9 +1,9 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { updateCheck } from "./update_check.js";
-import { DAY, dirname, fromFileUrl, join } from "./deps.js";
-import { FreshOptions } from "../server/mod.js";
-import { build } from "./build.js";
-import { collect, ensureMinDenoVersion, generate, Manifest } from "./mod.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { updateCheck } from "./update_check.ts";
+import { DAY, dirname, fromFileUrl, join } from "./deps.ts";
+import { FreshOptions } from "../server/mod.ts";
+import { build } from "./build.ts";
+import { collect, ensureMinDenoVersion, generate, Manifest } from "./mod.ts";
 
 export async function dev(
   base: string,

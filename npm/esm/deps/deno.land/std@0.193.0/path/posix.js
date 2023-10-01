@@ -2,9 +2,9 @@
 // Copyright the Browserify authors. MIT License.
 // Ported from https://github.com/browserify/path-browserify/
 // This module is browser compatible.
-import * as dntShim from "../../../../_dnt.shims.js";
-import { CHAR_DOT } from "./_constants.js";
-import { _format, assertPath, encodeWhitespace, isPosixPathSeparator, lastPathSegment, normalizeString, stripSuffix, stripTrailingSeparators, } from "./_util.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
+import { CHAR_DOT } from "./_constants.ts";
+import { _format, assertPath, encodeWhitespace, isPosixPathSeparator, lastPathSegment, normalizeString, stripSuffix, stripTrailingSeparators, } from "./_util.ts";
 export const sep = "/";
 export const delimiter = ":";
 // path.resolve([from ...], to)

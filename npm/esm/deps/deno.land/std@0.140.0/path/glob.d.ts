@@ -1,4 +1,4 @@
-import type { OSType } from "../_util/os.js";
+import type { OSType } from "../_util/os.ts";
 export interface GlobOptions {
     /** Extended glob syntax.
      * See https://www.linuxjournal.com/content/bash-extended-globbing. Defaults

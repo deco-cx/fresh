@@ -1,13 +1,13 @@
 import { ComponentChildren } from "preact";
-import { AppContext } from "../../server.js";
-import { checkAsyncComponent } from "./render.js";
+import { AppContext } from "../../server.ts";
+import { checkAsyncComponent } from "./render.ts";
 import {
   AsyncLayout,
   AsyncRoute,
   LayoutContext,
   RouteContext,
   StartOptions,
-} from "./types.js";
+} from "./types.ts";
 
 export function defineConfig(config: StartOptions): StartOptions {
   return config;

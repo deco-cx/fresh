@@ -1,4 +1,4 @@
-import type { Operator, SemVer } from "./types.js";
+import type { Operator, SemVer } from "./types.ts";
 /**
  * Do a comparison of two semantic version objects based on the given operator
  * @param s0 The left side of the comparison

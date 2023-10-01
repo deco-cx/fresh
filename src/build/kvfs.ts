@@ -4,16 +4,17 @@ const CHUNKSIZE = 65536;
 const NAMESPACE = ["_frsh", "js", BUILD_ID];
 
 // @ts-ignore as `Deno.openKv` is still unstable.
-const kv = await Deno.openKv?.().catch((e) => {
-  console.error(e);
-
-  return null;
-});
 
 export const isSupported = () => kv != null;
 
 export const getFile = async (file: string) => {
   if (!isSupported()) return null;
+
+  const kv = await Deno.openKv?.().catch((e) => {
+    console.error(e);
+  
+    return null;
+  });
 
   const filepath = [...NAMESPACE, file];
   const metadata = await kv!.get(filepath).catch(() => null);

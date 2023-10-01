@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVer, SemVerRange } from "./types.js";
-import { gte } from "./gte.js";
-import { lte } from "./lte.js";
+import type { SemVer, SemVerRange } from "./types.ts";
+import { gte } from "./gte.ts";
+import { lte } from "./lte.ts";
 
 /**
  * Test to see if the version satisfies the range.

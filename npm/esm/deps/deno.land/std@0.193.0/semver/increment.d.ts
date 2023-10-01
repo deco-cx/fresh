@@ -1,4 +1,4 @@
-import type { ReleaseType, SemVer } from "./types.js";
+import type { ReleaseType, SemVer } from "./types.ts";
 /**
  * Returns the new version resulting from an increment by release type.
  *

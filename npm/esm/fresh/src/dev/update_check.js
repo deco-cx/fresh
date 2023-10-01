@@ -1,5 +1,5 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { colors, join, semver } from "./deps.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { colors, join, semver } from "./deps.ts";
 function getHomeDir() {
     switch (dntShim.Deno.build.os) {
         case "linux": {

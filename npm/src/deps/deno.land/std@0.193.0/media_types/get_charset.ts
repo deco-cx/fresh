@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { parseMediaType } from "./parse_media_type.js";
-import { type DBEntry } from "./_util.js";
-import { db, type KeyOfDb } from "./_db.js";
+import { parseMediaType } from "./parse_media_type.ts";
+import { type DBEntry } from "./_util.ts";
+import { db, type KeyOfDb } from "./_db.ts";
 
 /**
  * Given a media type or header value, identify the encoding charset. If the

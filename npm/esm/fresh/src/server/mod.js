@@ -1,9 +1,9 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { ServerContext } from "./context.js";
-export { Status } from "./deps.js";
-import { colors, serve } from "./deps.js";
-export { defineApp, defineConfig, defineLayout, defineRoute, } from "./defines.js";
-export { RenderContext } from "./render.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { ServerContext } from "./context.ts";
+export { Status } from "./deps.ts";
+import { colors, serve } from "./deps.ts";
+export { defineApp, defineConfig, defineLayout, defineRoute, } from "./defines.ts";
+export { RenderContext } from "./render.ts";
 export { ServerContext };
 export async function createHandler(routes, opts = {}) {
     const ctx = await ServerContext.fromManifest(routes, opts);

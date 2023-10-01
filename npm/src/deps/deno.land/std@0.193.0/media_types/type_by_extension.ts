@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { types } from "./_db.js";
+import { types } from "./_db.ts";
 
 /**
  * Returns the media type associated with the file extension. Values are

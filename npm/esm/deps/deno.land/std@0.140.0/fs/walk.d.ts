@@ -1,4 +1,4 @@
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 /** Create WalkEntry for the `path` synchronously */
 export declare function _createWalkEntrySync(path: string): WalkEntry;
 /** Create WalkEntry for the `path` asynchronously */

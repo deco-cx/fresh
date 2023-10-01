@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import db from "./vendor/mime-db.v1.52.0.js";
-import { type DBEntry, extensions } from "./_util.js";
+import db from "./vendor/mime-db.v1.52.0.ts";
+import { type DBEntry, extensions } from "./_util.ts";
 
 export type KeyOfDb = keyof typeof db;
 

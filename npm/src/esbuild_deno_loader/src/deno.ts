@@ -1,5 +1,5 @@
 // Lifted from https://raw.githubusercontent.com/denoland/deno_graph/89affe43c9d3d5c9165c8089687c107d53ed8fe1/lib/media_type.ts
-import * as dntShim from "../../_dnt.shims.js";
+import * as dntShim from "../../_dnt.shims.ts";
 
 export type MediaType =
   | "JavaScript"

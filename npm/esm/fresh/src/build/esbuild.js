@@ -10,10 +10,10 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _EsbuildBuilder_options, _EsbuildBuilder_files, _EsbuildBuilder_dependencies, _EsbuildBuilder_build;
-import * as dntShim from "../../../_dnt.shims.js";
-import { denoPlugins, esbuild, esbuildWasmURL, fromFileUrl, regexpEscape, toFileUrl, } from "./deps.js";
-import { getDependencies, saveSnapshot } from "./kv.js";
-import { getFile } from "./kvfs.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { denoPlugins, esbuild, esbuildWasmURL, fromFileUrl, regexpEscape, toFileUrl, } from "./deps.ts";
+import { getDependencies, saveSnapshot } from "./kv.ts";
+import { getFile } from "./kvfs.ts";
 export class EsbuildBuilder {
     constructor(options) {
         _EsbuildBuilder_options.set(this, void 0);

@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 /**
  * Test whether `src` and `dest` resolve to the same location
  * @param src src file path

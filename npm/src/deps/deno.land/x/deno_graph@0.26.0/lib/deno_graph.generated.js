@@ -1,10 +1,10 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
 // @generated file from build script, do not edit
 // deno-lint-ignore-file
-import * as dntShim from "../../../../../_dnt.shims.js";
+import * as dntShim from "../../../../../_dnt.shims.ts";
 
 
-import * as import0 from "./snippets/deno_graph-de651bc9c240ed8d/src/deno_apis.js";
+import * as import0 from "./snippets/deno_graph-de651bc9c240ed8d/src/deno_apis.ts";
 
 const heap = new Array(32).fill(undefined);
 

@@ -16,9 +16,9 @@
  *
  * @module
  */
-import { createGraph as jsCreateGraph, parseModule as jsParseModule, } from "./lib/deno_graph.generated.js";
-import { load as defaultLoad } from "./lib/loader.js";
-export { load } from "./lib/loader.js";
+import { createGraph as jsCreateGraph, parseModule as jsParseModule, } from "./lib/deno_graph.generated.ts";
+import { load as defaultLoad } from "./lib/loader.ts";
+export { load } from "./lib/loader.ts";
 export function createGraph(rootSpecifiers, options = {}) {
     rootSpecifiers = Array.isArray(rootSpecifiers)
         ? rootSpecifiers

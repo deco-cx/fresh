@@ -30,12 +30,12 @@
  *
  * @module
  */
-import { type CacheType } from "./cache.js";
-import { type CacheInfo, type LoadResponse } from "./deps.js";
-import { type CacheSetting } from "./file_fetcher.js";
-export { type CacheType, FetchCacher } from "./cache.js";
-export { DenoDir } from "./deno_dir.js";
-export { type CacheSetting, FileFetcher } from "./file_fetcher.js";
+import { type CacheType } from "./cache.ts";
+import { type CacheInfo, type LoadResponse } from "./deps.ts";
+import { type CacheSetting } from "./file_fetcher.ts";
+export { type CacheType, FetchCacher } from "./cache.ts";
+export { DenoDir } from "./deno_dir.ts";
+export { type CacheSetting, FileFetcher } from "./file_fetcher.ts";
 export interface Loader {
     /** A function that can be passed to a `deno_graph` building function to
      * provide information about the cache to populate the output.

@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import db from "./vendor/mime-db.v1.52.0.js";
-import { extensions } from "./_util.js";
+import db from "./vendor/mime-db.v1.52.0.ts";
+import { extensions } from "./_util.ts";
 /** A map of the media type for a given extension */
 export const types = new Map();
 /** Internal function to populate the maps based on the Mime DB. */

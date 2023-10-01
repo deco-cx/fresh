@@ -1,5 +1,5 @@
 import type { CacheInfo, LoadResponse, Module, ModuleGraph, ModuleKind, ResolveResult, TypesDependency } from "./lib/types";
-export { load } from "./lib/loader.js";
+export { load } from "./lib/loader.ts";
 export type { CacheInfo, Dependency, LoadResponse, Module, ModuleGraph, ModuleGraphJson, ModuleKind, ResolveResult, TypesDependency, } from "./lib/types";
 export interface CreateGraphOptions {
     /**

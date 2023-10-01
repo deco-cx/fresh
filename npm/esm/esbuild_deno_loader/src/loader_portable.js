@@ -4,9 +4,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _PortableLoader_instances, _PortableLoader_fetchOngoing, _PortableLoader_fetchModules, _PortableLoader_fetchRedirects, _PortableLoader_resolveRemote, _PortableLoader_loadRemote, _PortableLoader_fetch, _PortableLoader_loadLocal;
-import * as dntShim from "../../_dnt.shims.js";
-import { fromFileUrl } from "../deps.js";
-import { mapContentType, mediaTypeToLoader, parseNpmSpecifier, } from "./shared.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { fromFileUrl } from "../deps.ts";
+import { mapContentType, mediaTypeToLoader, parseNpmSpecifier, } from "./shared.ts";
 export class PortableLoader {
     constructor() {
         _PortableLoader_instances.add(this);

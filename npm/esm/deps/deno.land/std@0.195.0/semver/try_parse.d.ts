@@ -1,4 +1,4 @@
-import { SemVer } from "./types.js";
+import { SemVer } from "./types.ts";
 /**
  * Returns the parsed version, or undefined if it's not valid.
  * @param version The version string to parse

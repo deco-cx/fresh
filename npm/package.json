@@ -23,7 +23,10 @@
     }
   },
   "dependencies": {
-    "@deno/shim-deno": "~0.16.1"
+    "@deno/shim-deno": "^0.16.1",
+    "fs.promises": "^0.1.2",
+    "preact": "^10.18.1",
+    "preact-render-to-string": "^6.2.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.9"

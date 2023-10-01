@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { SemVer } from "./types.js";
-import { isValidNumber } from "./_shared.js";
-import { isSemVer } from "./is_semver.js";
-import { FULL, MAX_LENGTH, NUMERICIDENTIFIER, re, src } from "./_shared.js";
+import { SemVer } from "./types.ts";
+import { isValidNumber } from "./_shared.ts";
+import { isSemVer } from "./is_semver.ts";
+import { FULL, MAX_LENGTH, NUMERICIDENTIFIER, re, src } from "./_shared.ts";
 
 /**
  * Attempt to parse a string as a semantic version, returning either a `SemVer`

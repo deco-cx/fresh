@@ -18,7 +18,7 @@
  * The corresponding deserializer is in `src/runtime/deserializer.ts`.
  */
 import { isValidElement, VNode } from "preact";
-import { KEY } from "../runtime/deserializer.js";
+import { KEY } from "../runtime/deserializer.ts";
 
 interface SerializeResult {
   /** The string serialization. */

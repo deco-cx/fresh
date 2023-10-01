@@ -1,4 +1,4 @@
-import * as dntShim from "../../_dnt.shims.js";
+import * as dntShim from "../../_dnt.shims.ts";
 import {
   base32Encode,
   DenoDir,
@@ -6,15 +6,15 @@ import {
   esbuild,
   fromFileUrl,
   join,
-} from "../deps.js";
-import * as deno from "./deno.js";
+} from "../deps.ts";
+import * as deno from "./deno.ts";
 import {
   Loader,
   LoaderResolution,
   mapContentType,
   mediaTypeToLoader,
   parseNpmSpecifier,
-} from "./shared.js";
+} from "./shared.ts";
 
 let DENO_DIR: DenoDir | undefined;
 

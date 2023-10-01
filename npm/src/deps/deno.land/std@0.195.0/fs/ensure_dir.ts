@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
-import { getFileInfoType } from "./_util.js";
+import { getFileInfoType } from "./_util.ts";
 
 /**
  * Ensures that the directory exists.

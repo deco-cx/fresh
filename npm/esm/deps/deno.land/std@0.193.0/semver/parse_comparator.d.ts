@@ -1,4 +1,4 @@
-import type { SemVerComparator } from "./types.js";
+import type { SemVerComparator } from "./types.ts";
 /**
  * Parses a comparator string into a valid SemVerComparator.
  * @param comparator

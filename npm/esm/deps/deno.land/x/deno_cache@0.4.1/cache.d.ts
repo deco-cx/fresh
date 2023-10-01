@@ -1,7 +1,7 @@
-import type { CacheInfo, LoadResponse } from "./deps.js";
-import { DiskCache } from "./disk_cache.js";
-import type { FileFetcher } from "./file_fetcher.js";
-import type { HttpCache } from "./http_cache.js";
+import type { CacheInfo, LoadResponse } from "./deps.ts";
+import { DiskCache } from "./disk_cache.ts";
+import type { FileFetcher } from "./file_fetcher.ts";
+import type { HttpCache } from "./http_cache.ts";
 /** The type of cache information that should be set or retrieved from the
  * cache. */
 export type CacheType = "declaration" | "emit" | "sourcemap" | "buildinfo" | "version";

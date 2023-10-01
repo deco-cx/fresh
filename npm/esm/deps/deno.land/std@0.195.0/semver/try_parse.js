@@ -1,4 +1,4 @@
-import { parse } from "./parse.js";
+import { parse } from "./parse.ts";
 /**
  * Returns the parsed version, or undefined if it's not valid.
  * @param version The version string to parse

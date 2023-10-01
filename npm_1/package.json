@@ -1,0 +1,28 @@
+{
+  "module": "./esm/fresh/dev.js",
+  "name": "@marcosvcp/fresh",
+  "version": "0.1.3",
+  "description": "Deno fresh compiled to CommonJS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deco-cx/fresh"
+  },
+  "bugs": {
+    "url": "https://github.com/deco-cx/fresh/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./esm/fresh/dev.js"
+    },
+    "./server.js": {
+      "import": "./esm/fresh/server.js"
+    },
+    "./runtime.js": {
+      "import": "./esm/fresh/runtime.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}

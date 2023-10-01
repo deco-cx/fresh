@@ -1,13 +1,13 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import * as dntShim from "../../../../_dnt.shims.js";
+import * as dntShim from "../../../../_dnt.shims.ts";
 
 
-import { basename } from "../path/basename.js";
-import { join } from "../path/join.js";
-import { resolve } from "../path/resolve.js";
-import { ensureDir, ensureDirSync } from "./ensure_dir.js";
-import { getFileInfoType, isSubdir, toPathString } from "./_util.js";
-import { assert } from "../assert/assert.js";
+import { basename } from "../path/basename.ts";
+import { join } from "../path/join.ts";
+import { resolve } from "../path/resolve.ts";
+import { ensureDir, ensureDirSync } from "./ensure_dir.ts";
+import { getFileInfoType, isSubdir, toPathString } from "./_util.ts";
+import { assert } from "../assert/assert.ts";
 
 const isWindows = dntShim.Deno.build.os === "windows";
 

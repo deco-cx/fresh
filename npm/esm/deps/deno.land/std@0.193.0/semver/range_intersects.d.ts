@@ -1,4 +1,4 @@
-import type { SemVerComparator, SemVerRange } from "./types.js";
+import type { SemVerComparator, SemVerRange } from "./types.ts";
 /**
  * The ranges intersect every range of AND comparators intersects with a least one range of OR ranges.
  * @param r0 range 0

@@ -1,4 +1,4 @@
-import { Buffer } from "../io/buffer.js";
+import { Buffer } from "../io/buffer.ts";
 const DEFAULT_CHUNK_SIZE = 16640;
 const DEFAULT_BUFFER_SIZE = 32 * 1024;
 function isCloser(value) {

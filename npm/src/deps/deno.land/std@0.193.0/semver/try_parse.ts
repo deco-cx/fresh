@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { SemVer } from "./types.js";
-import { parse } from "./parse.js";
+import { SemVer } from "./types.ts";
+import { parse } from "./parse.ts";
 
 /**
  * Returns the parsed version, or undefined if it's not valid.

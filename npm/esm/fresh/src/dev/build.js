@@ -1,7 +1,7 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { ServerContext } from "../server/context.js";
-import { dirname, fromFileUrl, join, toFileUrl } from "../server/deps.js";
-import { fs } from "./deps.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { ServerContext } from "../server/context.ts";
+import { dirname, fromFileUrl, join, toFileUrl } from "../server/deps.ts";
+import { fs } from "./deps.ts";
 export async function build(manifestPath, opts) {
     const manifest = (await import(toFileUrl(manifestPath).href))
         .default;

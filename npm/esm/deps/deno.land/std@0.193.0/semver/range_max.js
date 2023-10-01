@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { INVALID } from "./constants.js";
-import { sort } from "./sort.js";
-import { testRange } from "./test_range.js";
+import { INVALID } from "./constants.ts";
+import { sort } from "./sort.ts";
+import { testRange } from "./test_range.ts";
 /**
  * The maximum valid SemVer for a given range or INVALID
  * @param range The range to calculate the max for

@@ -1,15 +1,15 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { CHAR_COLON, CHAR_DOT } from "./_constants.js";
-import { ParsedPath } from "./_interface.js";
+import { CHAR_COLON, CHAR_DOT } from "./_constants.ts";
+import { ParsedPath } from "./_interface.ts";
 import {
   assertPath,
   isPathSeparator,
   isPosixPathSeparator,
   isWindowsDeviceRoot,
   stripTrailingSeparators,
-} from "./_util.js";
+} from "./_util.ts";
 
 /**
  * Return a `ParsedPath` object of the `path`.

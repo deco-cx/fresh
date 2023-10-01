@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { ANY, INVALID } from "./constants.js";
-import type { SemVer } from "./types.js";
-import { isValidNumber, isValidString } from "./_shared.js";
+import { ANY, INVALID } from "./constants.ts";
+import type { SemVer } from "./types.ts";
+import { isValidNumber, isValidString } from "./_shared.ts";
 
 /**
  * Checks to see if value is a valid SemVer object. It does a check

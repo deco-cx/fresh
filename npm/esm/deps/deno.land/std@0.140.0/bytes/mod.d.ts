@@ -130,4 +130,4 @@ export declare function includesNeedle(source: Uint8Array, needle: Uint8Array, s
  * ```
  */
 export declare function copy(src: Uint8Array, dst: Uint8Array, off?: number): number;
-export { equals } from "./equals.js";
+export { equals } from "./equals.ts";

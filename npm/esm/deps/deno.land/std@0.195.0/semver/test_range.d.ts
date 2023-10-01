@@ -1,4 +1,4 @@
-import type { SemVer, SemVerRange } from "./types.js";
+import type { SemVer, SemVerRange } from "./types.ts";
 /**
  * Test to see if the version satisfies the range.
  * @param version The version to test

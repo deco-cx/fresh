@@ -1,6 +1,6 @@
 /// <reference types="node" />
-import { esbuild } from "../deps.js";
-import { MediaType } from "./deno.js";
+import { esbuild } from "../deps.ts";
+import { MediaType } from "./deno.ts";
 export interface Loader {
     resolve(specifier: URL): Promise<LoaderResolution>;
     loadEsm(specifier: URL): Promise<esbuild.OnLoadResult>;

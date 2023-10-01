@@ -1,7 +1,7 @@
-import { bundleAssetUrl } from "../constants.js";
-import { htmlEscapeJsonString } from "../htmlescape.js";
-import { serialize } from "../serializer.js";
-import { nonce } from "../../runtime/csp.js";
+import { bundleAssetUrl } from "../constants.ts";
+import { htmlEscapeJsonString } from "../htmlescape.ts";
+import { serialize } from "../serializer.ts";
+import { nonce } from "../../runtime/csp.ts";
 import { h } from "preact";
 function getRandomNonce(opts) {
     if (opts.randomNonce === undefined) {

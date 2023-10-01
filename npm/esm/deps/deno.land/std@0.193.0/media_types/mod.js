@@ -13,10 +13,10 @@
  *
  * @module
  */
-export * from "./content_type.js";
-export * from "./extension.js";
-export * from "./extensions_by_type.js";
-export * from "./format_media_type.js";
-export * from "./get_charset.js";
-export * from "./parse_media_type.js";
-export * from "./type_by_extension.js";
+export * from "./content_type.ts";
+export * from "./extension.ts";
+export * from "./extensions_by_type.ts";
+export * from "./format_media_type.ts";
+export * from "./get_charset.ts";
+export * from "./parse_media_type.ts";
+export * from "./type_by_extension.ts";

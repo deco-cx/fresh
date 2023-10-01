@@ -238,4 +238,4 @@ export function copy(src, dst, off = 0) {
     dst.set(src, off);
     return src.byteLength;
 }
-export { equals } from "./equals.js";
+export { equals } from "./equals.ts";

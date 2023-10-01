@@ -1,2 +1,2 @@
-import "../_dnt.polyfills.js";
-export * from "./src/server/mod.js";
+import "../_dnt.polyfills.ts";
+export * from "./src/server/mod.ts";

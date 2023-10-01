@@ -1,4 +1,4 @@
-import { esbuild, ImportMap, Scopes, SpecifierMap } from "../deps.js";
+import { esbuild, ImportMap, Scopes, SpecifierMap } from "../deps.ts";
 export type { ImportMap, Scopes, SpecifierMap };
 export interface DenoResolverPluginOptions {
     /**

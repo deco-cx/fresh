@@ -11,7 +11,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _InfoCache_instances, _InfoCache_options, _InfoCache_modules, _InfoCache_redirects, _InfoCache_npmPackages, _InfoCache_resolve, _InfoCache_getCached, _InfoCache_load;
 // Lifted from https://raw.githubusercontent.com/denoland/deno_graph/89affe43c9d3d5c9165c8089687c107d53ed8fe1/lib/media_type.ts
-import * as dntShim from "../../_dnt.shims.js";
+import * as dntShim from "../../_dnt.shims.ts";
 let tmpDir;
 async function info(specifier, options) {
     const opts = {

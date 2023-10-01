@@ -1,6 +1,6 @@
-import { ANY, MAX, MIN } from "./constants.js";
-import { gt } from "./gt.js";
-import { increment } from "./increment.js";
+import { ANY, MAX, MIN } from "./constants.ts";
+import { gt } from "./gt.ts";
+import { increment } from "./increment.ts";
 /**
  * The minimum semantic version that could match this comparator
  * @param semver The semantic version of the comparator

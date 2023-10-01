@@ -1,6 +1,6 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import type { SemVerComparator } from "./types.js";
-import { format } from "./format.js";
+import type { SemVerComparator } from "./types.ts";
+import { format } from "./format.ts";
 
 /**
  * Formats the comparator into a string

@@ -2,7 +2,7 @@ export {
   EsbuildBuilder,
   type EsbuildBuilderOptions,
   type JSXConfig,
-} from "./esbuild.js";
+} from "./esbuild.ts";
 export interface Builder {
   build(): Promise<void>;
 

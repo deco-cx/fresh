@@ -1,8 +1,8 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { isWindows } from "./_os.js";
-import { posixRelative, windowsRelative } from "./_relative.js";
+import { isWindows } from "./_os.ts";
+import { posixRelative, windowsRelative } from "./_relative.ts";
 
 /**
  * Return the relative path from `from` to `to` based on current working directory.

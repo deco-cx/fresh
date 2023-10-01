@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
-import { ALL } from "./constants.js";
-import { CARET, HYPHENRANGE, re, STAR, TILDE, XRANGE } from "./_shared.js";
-import { parseComparator } from "./parse_comparator.js";
+import { ALL } from "./constants.ts";
+import { CARET, HYPHENRANGE, re, STAR, TILDE, XRANGE } from "./_shared.ts";
+import { parseComparator } from "./parse_comparator.ts";
 // ~, ~> --> * (any, kinda silly)
 // ~2, ~2.x, ~2.x.x, ~>2, ~>2.x ~>2.x.x --> >=2.0.0 <3.0.0
 // ~2.0, ~2.0.x, ~>2.0, ~>2.0.x --> >=2.0.0 <2.1.0

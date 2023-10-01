@@ -1,7 +1,7 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
 
-import { delay } from "./delay.js";
+import { delay } from "./delay.ts";
 
 export interface DeadlineOptions {
   /** Signal used to abort the deadline. */

@@ -1,4 +1,4 @@
-import type { SemVer, SemVerRange } from "./types.js";
+import type { SemVer, SemVerRange } from "./types.ts";
 /**
  * Returns true if the version is outside the bounds of the range in either the
  * high or low direction. The hilo argument must be either the string '>' or

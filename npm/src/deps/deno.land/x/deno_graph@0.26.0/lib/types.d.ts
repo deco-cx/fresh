@@ -1,6 +1,6 @@
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
 
-import type { MediaType } from "./media_type.js";
+import type { MediaType } from "./media_type.ts";
 
 /** Additional meta data that is used to enrich the output of the module
  * graph. */

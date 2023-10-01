@@ -1,9 +1,9 @@
 // Copyright 2018-2023 the Deno authors. All rights reserved. MIT license.
 // This module is browser compatible.
-import { parseMediaType } from "./parse_media_type.js";
-import { typeByExtension } from "./type_by_extension.js";
-import { getCharset } from "./get_charset.js";
-import { formatMediaType } from "./format_media_type.js";
+import { parseMediaType } from "./parse_media_type.ts";
+import { typeByExtension } from "./type_by_extension.ts";
+import { getCharset } from "./get_charset.ts";
+import { formatMediaType } from "./format_media_type.ts";
 /**
  * Given an extension or media type, return a full `Content-Type` or
  * `Content-Disposition` header value.

@@ -6,9 +6,9 @@ import {
   CHAR_COLON,
   CHAR_DOT,
   CHAR_QUESTION_MARK,
-} from "./_constants.js";
-import { isWindowsDeviceRoot } from "./_util.js";
-import { windowsResolve } from "./_resolve.js";
+} from "./_constants.ts";
+import { isWindowsDeviceRoot } from "./_util.ts";
+import { windowsResolve } from "./_resolve.ts";
 
 /**
  * Resolves path to a namespace path

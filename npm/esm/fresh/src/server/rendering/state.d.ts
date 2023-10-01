@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { type ComponentChildren, type VNode } from "preact";
-import { Island } from "../types.js";
-import { ContentSecurityPolicy } from "../../runtime/csp.js";
+import { Island } from "../types.ts";
+import { ContentSecurityPolicy } from "../../runtime/csp.ts";
 export interface RenderStateRouteOptions {
     url: URL;
     route: string;

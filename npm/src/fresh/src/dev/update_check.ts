@@ -1,5 +1,5 @@
-import * as dntShim from "../../../_dnt.shims.js";
-import { colors, join, semver } from "./deps.js";
+import * as dntShim from "../../../_dnt.shims.ts";
+import { colors, join, semver } from "./deps.ts";
 
 export interface CheckFile {
   last_checked: string;

@@ -30,12 +30,12 @@
  *
  * @module
  */
-import { FetchCacher } from "./cache.js";
-import { DenoDir } from "./deno_dir.js";
-import { FileFetcher } from "./file_fetcher.js";
-export { FetchCacher } from "./cache.js";
-export { DenoDir } from "./deno_dir.js";
-export { FileFetcher } from "./file_fetcher.js";
+import { FetchCacher } from "./cache.ts";
+import { DenoDir } from "./deno_dir.ts";
+import { FileFetcher } from "./file_fetcher.ts";
+export { FetchCacher } from "./cache.ts";
+export { DenoDir } from "./deno_dir.ts";
+export { FileFetcher } from "./file_fetcher.ts";
 /**
  * Creates a cache object that allows access to the internal `DENO_DIR` cache
  * structure for remote dependencies and cached output of emitted modules.

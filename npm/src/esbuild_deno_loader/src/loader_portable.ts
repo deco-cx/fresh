@@ -1,13 +1,13 @@
-import * as dntShim from "../../_dnt.shims.js";
-import { esbuild, fromFileUrl } from "../deps.js";
-import * as deno from "./deno.js";
+import * as dntShim from "../../_dnt.shims.ts";
+import { esbuild, fromFileUrl } from "../deps.ts";
+import * as deno from "./deno.ts";
 import {
   Loader,
   LoaderResolution,
   mapContentType,
   mediaTypeToLoader,
   parseNpmSpecifier,
-} from "./shared.js";
+} from "./shared.ts";
 
 interface Module {
   specifier: string;

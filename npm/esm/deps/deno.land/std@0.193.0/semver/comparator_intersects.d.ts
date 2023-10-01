@@ -1,4 +1,4 @@
-import type { SemVerComparator } from "./types.js";
+import type { SemVerComparator } from "./types.ts";
 /**
  * Returns true if the range of possible versions intersects with the other comparators set of possible versions
  * @param c0 The left side comparator

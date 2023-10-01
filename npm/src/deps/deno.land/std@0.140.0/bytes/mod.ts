@@ -268,4 +268,4 @@ export function copy(src: Uint8Array, dst: Uint8Array, off = 0): number {
   return src.byteLength;
 }
 
-export { equals } from "./equals.js";
+export { equals } from "./equals.ts";
