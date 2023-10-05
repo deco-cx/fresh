@@ -12,8 +12,8 @@ export class AotSnapshot implements BuildSnapshot {
     this.#dependencies = dependencies;
   }
 
-  get paths(): string[] {
-    return Array.from(this.#files.keys());
+  get paths(): Promise<string[]> {
+    return Promise.resolve(Array.from(this.#files.keys()));
   }
 
   async read(path: string): Promise<ReadableStream<Uint8Array> | null> {
@@ -31,7 +31,7 @@ export class AotSnapshot implements BuildSnapshot {
     return null;
   }
 
-  dependencies(path: string): string[] {
-    return this.#dependencies.get(path) ?? [];
+  dependencies(path: string): Promise<string[]> {
+    return Promise.resolve(this.#dependencies.get(path) ?? []);
   }
 }
