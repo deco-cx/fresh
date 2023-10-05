@@ -32,7 +32,7 @@ export interface RenderOptions<Data> {
   app: AppModule;
   layouts: LayoutRoute[];
   imports: string[];
-  dependenciesFn: (path: string) => string[];
+  // dependenciesFn: (path: string) => string[];
   url: URL;
   params: Record<string, string | string[]>;
   renderFn: RenderFunction;
@@ -346,7 +346,7 @@ export async function render<Data>(
     bodyHtml,
     imports: opts.imports,
     csp,
-    dependenciesFn: opts.dependenciesFn,
+    // dependenciesFn: opts.dependenciesFn,
     styles: ctx.styles,
     pluginRenderResults: renderResults,
   });

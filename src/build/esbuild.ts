@@ -7,7 +7,9 @@ import {
   regexpEscape,
   toFileUrl,
 } from "./deps.ts";
-import { Builder, BuildSnapshot } from "./mod.ts";
+import { getSnapJSON, saveSnapshot } from "./kv.ts";
+import { getFile } from "./kvfs.ts";
+import { Builder, BuildSnapshot, BuildSnapshotJson } from "./mod.ts";
 
 export interface EsbuildBuilderOptions {
   /** The build ID. */
@@ -35,7 +37,11 @@ export class EsbuildBuilder implements Builder {
     this.#options = options;
   }
 
-  async build(): Promise<EsbuildSnapshot> {
+  build(): LazySnapshot {
+    return new LazySnapshot(() => this.#build());
+  }
+
+  async #build(): Promise<EsbuildSnapshot> {
     const opts = this.#options;
     try {
       await initEsbuild();
@@ -156,6 +162,60 @@ function buildIdPlugin(buildId: string): esbuildTypes.Plugin {
   };
 }
 
+export class LazySnapshot implements BuildSnapshot {
+  #snapshot: Promise<BuildSnapshot> | null = null;
+  #snapJSON: BuildSnapshotJson | null = null;
+
+  constructor(private getSnapshot: () => Promise<BuildSnapshot>) {}
+
+  async getSnapJSONMemoized() {
+    if (!this.#snapJSON) {
+      this.#snapJSON = await getSnapJSON();
+    }
+
+    return this.#snapJSON;
+  }
+
+  get paths(): Promise<string[]> {
+    return this.getSnapJSONMemoized().then((snap) =>
+      snap?.files ? Object.keys(snap?.files) : []
+    );
+  }
+
+  async read(path: string) {
+    const snap = await this.#snapshot;
+    const content = snap?.read(path) || await getFile(path);
+
+    if (content) {
+      return content;
+    }
+
+    if (this.#snapshot === null) {
+      const start = performance.now();
+      this.#snapshot = this.getSnapshot()
+        .then((snapshot) => {
+          const dur = (performance.now() - start) / 1e3;
+          console.info(` 📦 Fresh bundle: ${dur.toFixed(2)}s`);
+
+          // Save snapshot in the background
+          saveSnapshot(snapshot).catch(console.error);
+
+          return snapshot;
+        });
+    }
+
+    const snapshot = await this.#snapshot;
+
+    return snapshot.read(path);
+  }
+
+  async dependencies(path: string): Promise<string[]> {
+    const snap = await this.getSnapJSONMemoized();
+
+    return snap?.files[path] ?? [];
+  }
+}
+
 export class EsbuildSnapshot implements BuildSnapshot {
   #files: Map<string, Uint8Array>;
   #dependencies: Map<string, string[]>;
@@ -168,15 +228,15 @@ export class EsbuildSnapshot implements BuildSnapshot {
     this.#dependencies = dependencies;
   }
 
-  get paths(): string[] {
-    return Array.from(this.#files.keys());
+  get paths(): Promise<string[]> {
+    return Promise.resolve(Array.from(this.#files.keys()));
   }
 
   read(path: string): Uint8Array | null {
     return this.#files.get(path) ?? null;
   }
 
-  dependencies(path: string): string[] {
-    return this.#dependencies.get(path) ?? [];
+  dependencies(path: string): Promise<string[]> {
+    return Promise.resolve(this.#dependencies.get(path) ?? []);
   }
 }

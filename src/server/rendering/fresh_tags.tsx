@@ -15,7 +15,7 @@ export function renderFreshTags(
     csp?: ContentSecurityPolicy;
     imports: string[];
     randomNonce?: string;
-    dependenciesFn: (path: string) => string[];
+    // dependenciesFn: (path: string) => string[];
     styles: string[];
     pluginRenderResults: [Plugin, PluginRenderResult][];
   },
@@ -39,10 +39,10 @@ export function renderFreshTags(
     const url = bundleAssetUrl(`/${path}`);
     if (!isPartial) {
       preloadSet.add(url);
-      for (const depPath of opts.dependenciesFn(path)) {
-        const url = bundleAssetUrl(`/${depPath}`);
-        preloadSet.add(url);
-      }
+      // for (const depPath of opts.dependenciesFn(path)) {
+      //   const url = bundleAssetUrl(`/${depPath}`);
+      //   preloadSet.add(url);
+      // }
     }
     return url;
   }
@@ -139,7 +139,8 @@ export function renderFreshTags(
   // Always revive to detect partials
   if (needsMainScript) {
     script += `const propsArr = typeof STATE !== "undefined" ? STATE[0] : [];`;
-    script += `revive({${islandRegistry}}, propsArr);`;
+    script +=
+      `try { revive({${islandRegistry}}, propsArr); } catch (error) { console.error("revive error", error); } `;
   }
 
   // Append the inline script.
