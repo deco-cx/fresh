@@ -60,7 +60,7 @@ export async function getFreshConfigWithDefaults(
     manifest,
     build: {
       outDir: "",
-      target: opts.build?.target ?? ["chrome99", "firefox99", "safari15"],
+      target: opts.build?.target ?? ["chrome99", "firefox99", "safari12"],
     },
     plugins: opts.plugins ?? [],
     staticDir: "",
