@@ -1,4 +1,4 @@
-import { toSnapshotJSON } from "../dev/build.ts";
+import { toSnapshotJSON } from "../dev/snapshot.ts";
 import { getFile, housekeep, isSupported, saveFile } from "./kvfs.ts";
 import { BuildSnapshot, BuildSnapshotJson } from "./mod.ts";
 
