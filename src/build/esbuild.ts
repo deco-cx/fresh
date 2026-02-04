@@ -81,7 +81,7 @@ export class EsbuildBuilder implements Builder {
 
         format: "esm",
         bundle: true,
-        splitting: true,
+        splitting: false,
         treeShaking: true,
         sourcemap: opts.dev ? "linked" : false,
         ...minifyOptions,
